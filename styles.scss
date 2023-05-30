@@ -104,6 +104,10 @@ $pagination-disabled-border-color:  $pagination-border-color !default;
 
 // Variables
 
+@import 'mixin';
+
+@include font-face("Shippori Mincho", "https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap", null, null, ttf);
+
 $web-font-path: "https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" !default;
 @if $web-font-path {
   @import url($web-font-path);
