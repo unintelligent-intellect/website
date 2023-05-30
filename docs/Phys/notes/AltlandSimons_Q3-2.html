@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.247">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Haruki YAGI - Path integral for a quantum harmonic oscillator</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Haruki YAGI</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Physics.html">
+ <span class="menu-text">Physics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Music.html">
+ <span class="menu-text">Music</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Question</a></li>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a>
+  <ul class="collapse">
+  <li><a href="#matrix-elements-of-the-density-matrix" id="toc-matrix-elements-of-the-density-matrix" class="nav-link" data-scroll-target="#matrix-elements-of-the-density-matrix">Matrix elements of the density matrix</a></li>
+  <li><a href="#low-temperature-expansion" id="toc-low-temperature-expansion" class="nav-link" data-scroll-target="#low-temperature-expansion">Low temperature expansion</a></li>
+  <li><a href="#high-temperature-expansion" id="toc-high-temperature-expansion" class="nav-link" data-scroll-target="#high-temperature-expansion">High temperature expansion</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Path integral for a quantum harmonic oscillator</h1>
+<p class="subtitle lead">Condensed Matter Field Theory &gt; Chapter 3 &gt; Problem 2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this webpage, we will derive the density matrix for a quantum harmonic oscillator at finite temperature using the path integral formalism.</p>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<div class="alert alert-info">
+<p>Consider a quantum harmonic oscillator:</p>
+<p><span class="math display">\[H=\frac{p^2}{2m}+\frac{1}{2}m\omega^2 q^2\]</span></p>
+<p>Obtain the density matrix <span class="math inline">\(\rho(q,q')=\langle q|e^{-\beta H}|q'\rangle\)</span> at finite temperature, where <span class="math inline">\(\beta=1/T\,(k_B=1)\)</span>. Obtain and comment on the asymptotics:</p>
+<ol type="1">
+<li>Low temperature: <span class="math inline">\(T\ll \hbar \omega\)</span></li>
+<li>High temperature: <span class="math inline">\(T\gg \hbar \omega\)</span></li>
+</ol>
+<p>In the high-temperature case, be sure to carry out the expansion in <span class="math inline">\(\hbar \omega/T\)</span> to second order.</p>
+</div>
+</section>
+<section id="strategy" class="level2">
+<h2 class="anchored" data-anchor-id="strategy">Strategy</h2>
+<ul>
+<li>The path integral for the classical harmonic oscillator derives the propagator.</li>
+<li>Imaginary time evolution of the propagator gives the density matrix.</li>
+</ul>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<section id="matrix-elements-of-the-density-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-elements-of-the-density-matrix">Matrix elements of the density matrix</h3>
+<p>Consider a path integral for the classical harmonic oscillator. The action is written as: <span class="math display">\[S[q]=\int_0^t dt' \frac{m}{2}\left(\dot{q}^2-\omega^2 q^2\right).\]</span></p>
+<p>The corresponding propagator is given by the path integral:</p>
+<p><span class="math display">\[\langle q|e^{-iHt/\hbar }|q'\rangle=\int_{q(0)=q}^{q(t)=q'} \mathcal{D}q\,e^{iS[q]/\hbar}\]</span></p>
+<p>where <span class="math inline">\(\mathcal{D}q\)</span> is the path integral measure.</p>
+<p>Calculating the path integral, we obtain the propagator<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p><span class="math display">\[\langle q|e^{-iHt/\hbar }|q'\rangle=\left(\frac{m\omega}{2\pi i\hbar \sin{\omega t}}\right)^{\frac{1}{2}}\exp\left[i\frac{m\omega}{2\hbar}\left(\left(q^2+q'^2\right)\cot{\omega t}-\frac{2q q'}{\sin{\omega t}}\right)\right]\]</span></p>
+<p>To obtain matrix elements of the density matrix, consider the imaginary time evolution: <span class="math inline">\(t=-i\beta\hbar\)</span>. We obtain the density matrix:</p>
+<p><span class="math display">\[\langle q|e^{-\beta H }|q'\rangle=\left(\frac{m\omega}{2\pi\hbar \sinh{\beta\hbar\omega}}\right)^{\frac{1}{2}}\exp\left[-\frac{m\omega}{2\hbar}\left(\left(q^2+q'^2\right)\coth{\beta\hbar\omega}-\frac{2q q'}{\sinh{\omega \beta\hbar}}\right)\right].\]</span></p>
+</section>
+<section id="low-temperature-expansion" class="level3">
+<h3 class="anchored" data-anchor-id="low-temperature-expansion">Low temperature expansion</h3>
+<p>In the low-temperature limit, <span class="math inline">\(\beta\hbar\omega\gg 1,\, \coth{\beta\hbar\omega}\approx 1,\, \sinh{\omega \beta\hbar}\approx e^{\beta\hbar\omega}/2\)</span>. We obtain:</p>
+<p><span class="math display">\[\langle q|e^{-\beta H }|q'\rangle=\rho(q,q')=\left(\frac{m\omega}{\pi\hbar e^{\beta\hbar\omega}}\right)^{\frac{1}{2}}\exp\left[-\frac{m\omega}{2\hbar}\left(\left(q^2+q'^2\right)-\frac{2q q'}{e^{\beta\hbar\omega}}\right)\right]\]</span></p>
+<p><span class="math display">\[\to \left(\frac{m\omega}{\pi\hbar e^{\beta\hbar\omega}}\right)^{\frac{1}{2}}\exp\left[-\frac{m\omega}{2\hbar}\left(q^2+q'^2\right)\right].\]</span></p>
+<p>Remember that following holds for the harmonic oscillator:</p>
+<p><span class="math display">\[p(q)=\left|\langle q|n=0\rangle\right|^2\propto e^{-\frac{m\omega}{\hbar}q^2}\]</span></p>
+<p>Therefore, matrix element can be rewritten as:</p>
+<p><span class="math display">\[\rho(q,q')=\langle q|n=0\rangle e^{-\beta E_0}\langle n=0|q'\rangle=\psi^*(q)e^{-\beta E_0}\psi(q').\]</span></p>
+<p>In the low-temperature limit, the wave function of the ground state appears and quantum nature becomes apparent. This fact is consistent with the fact that probabilities are concentrated in the ground state at low temperatures.</p>
+</section>
+<section id="high-temperature-expansion" class="level3">
+<h3 class="anchored" data-anchor-id="high-temperature-expansion">High temperature expansion</h3>
+<p>In the high-temperature limit, <span class="math inline">\(\beta\hbar\omega\ll 1,\, \coth{\beta\hbar\omega}\approx 1/x+x/3,\, 1/\sinh{\omega \beta\hbar}\approx 1/x-x/6\)</span>. We obtain:</p>
+<p><span class="math display">\[\langle q|e^{-\beta H }|q'\rangle\approx\left(\frac{m}{2\pi\beta\hbar^2}\right)^{\frac{1}{2}}\exp\left[-\frac{m\omega}{2\hbar}\left(\left(q^2+q'^2\right)\left(\frac{1}{\beta\hbar\omega}+\frac{\beta\hbar\omega}{3}\right)-2q q'\left(\frac{1}{\beta\hbar\omega}-\frac{\beta\hbar\omega}{6}\right)\right)\right]\]</span></p>
+<p><span class="math display">\[=\left(\frac{m}{2\pi\beta\hbar^2}\right)^{\frac{1}{2}}\exp\left[-\frac{m\omega}{2\hbar}\left(\frac{(q-q')^2}{\beta\hbar\omega}+\frac{\beta\hbar\omega}{3}\left(q^2+q'^2+qq'\right)\right)\right]\]</span></p>
+<p><span class="math display">\[= \left(\frac{m}{2\pi\beta\hbar^2}\right)^{\frac{1}{2}}e^{-\frac{m(q-q')^2}{\beta\hbar^2}}\quad\times \quad\exp\left[-\frac{m\beta\omega^2}{6}\left(q^2+q'^2+qq'\right)\right]\]</span></p>
+<p><span class="math display">\[\approx \delta(q-q')\exp{\left[-\beta\frac{m\omega^2}{6}\left(q^2+q'^2+qq'\right)\right]}\]</span></p>
+<p><span class="math display">\[= \delta(q-q')e^{-\beta\frac{m\omega^2q^2}{2}}.\]</span></p>
+<p>In the high-temperature limit, the Maxwell-Boltzmann distribution appears, indicating that thermal properties become apparent. Unlike quantum mechanics, where position and momentum can be determined independently, this matrix element of the density matrix can be thought of as already integrated for momentum.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://www.cambridge.org/core/books/condensed-matter-field-theory/0A8DE6503ED868D96985D9E7847C63FF">Condensed Matter Field Theory, 2nd edition, by Alexander Altland and Ben Simons</a></li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Please see the problem 3-1 of the book for the derivation of the propagator.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

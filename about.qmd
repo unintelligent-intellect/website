@@ -1,0 +1,18 @@
+---
+title: "About me"
+---
+
+I am a senior (B4) in the university majoring in applied physics. For my graduation research, I am conducting an experiment about condensed matter physics.
+
+### Current Affiliation
+
+Department of Applied Physics, 
+Faculty of Engineering, 
+The University of Tokyo
+
+### I'm interested in:
+
+- Quantum phases in condensed matters
+- Random matrix theory
+- Entanglement dynamics
+- Topological properties of high-dimentional parameter spaces

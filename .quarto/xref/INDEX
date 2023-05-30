@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "6e407ade"
+  },
+  "Music.qmd": {
+    "Music.html": "ce4d0124"
+  },
+  "About.qmd": {
+    "About.html": "87c0b3bb"
+  },
+  "Physics.qmd": {
+    "Physics.html": "f167921c"
+  },
+  "Phys/notes/AshcroftMerminC2.qmd": {
+    "AshcroftMerminC2.html": "292b4bb5"
+  },
+  "Phys/notes/AltlandSimons_instanton.qmd": {
+    "AltlandSimons_instanton.html": "f34692ae"
+  },
+  "Phys/notes/JordanWigner.qmd": {
+    "JordanWigner.html": "71f8698a"
+  },
+  "Phys/notes/AltlandSimons_Q3-6.qmd": {
+    "AltlandSimons_Q3-6.html": "7327d5db"
+  },
+  "Phys/notes/AltlandSimons_Q3_2.qmd": {
+    "AltlandSimons_Q3_2.html": "40063490"
+  },
+  "about.qmd": {
+    "about.html": "a50179a3"
+  },
+  "Phys/notes/AltlandSimons_Q3-2.qmd": {
+    "AltlandSimons_Q3-2.html": "6a139ec2"
+  }
+}

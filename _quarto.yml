@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Haruki YAGI"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - Physics.qmd
+      - Music.qmd
+
+format:
+  html:
+    theme: styles.scss
+    # css: styles.css
+    toc: true
+
+

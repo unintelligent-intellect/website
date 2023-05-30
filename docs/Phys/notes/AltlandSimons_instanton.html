@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.247">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Haruki YAGI - Derivation of the instanton solution by the path integral formalism</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Haruki YAGI</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Physics.html">
+ <span class="menu-text">Physics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Music.html">
+ <span class="menu-text">Music</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-euclidean-path-integral-formulation" id="toc-the-euclidean-path-integral-formulation" class="nav-link active" data-scroll-target="#the-euclidean-path-integral-formulation">The Euclidean path integral formulation</a></li>
+  <li><a href="#the-instanton-gas" id="toc-the-instanton-gas" class="nav-link" data-scroll-target="#the-instanton-gas">The instanton gas</a></li>
+  <li><a href="#practical-calculation" id="toc-practical-calculation" class="nav-link" data-scroll-target="#practical-calculation">Practical calculation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Derivation of the instanton solution by the path integral formalism</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this post, I will derive the instanton solution by making use of the path integral formalism.</p>
+<section id="the-euclidean-path-integral-formulation" class="level1">
+<h1>The Euclidean path integral formulation</h1>
+<p>Assume Lagrangian <span class="math inline">\(L\)</span> is a function of the coordinates <span class="math inline">\(q_i\)</span> and velocities <span class="math inline">\(\dot{q}_i\)</span> of the system.</p>
+<p><span class="math display">\[L=\frac{1}{2}m\dot{q}^2-V(q)\]</span></p>
+<p>The action is defined as below:</p>
+<p><span class="math display">\[S=\int_{t_i}^{t_f}Ldt\]</span></p>
+<p>The path integral is defined below:</p>
+<p><span class="math display">\[G(q_i,q_f;t)\equiv\int_{q_i}^{q_f} Dq\; e^{iS/\hbar }\quad \left(=\langle q_f|e^{-iHt/\hbar}|q_i\rangle\right)\]</span></p>
+<p>where <span class="math inline">\(Dq\)</span> is the path integral measure.</p>
+<p>For ease of calculation, we introduce the Euclidean time <span class="math inline">\(t\rightarrow-i\tau\)</span> and the Euclidean path integral is defined as below:</p>
+<p><span class="math display">\[G_E(q_i,q_f;\tau)\equiv\int_{q(\tau_i)=q_i}^{q(\tau_f)=q_f} Dq\; e^{-S_E/\hbar }\quad \left(=\langle q_f|e^{-\tau H/\hbar}|q_i\rangle\right)\]</span></p>
+<p>where <span class="math inline">\(S_E\)</span> is the Euclidean action defined below:</p>
+<p><span class="math display">\[S_E=\int_{\tau_i}^{\tau_f}\left(\frac{1}{2}m\dot{q}^2+V(q)\right) d\tau\]</span></p>
+<p>Note that the dot means the derivative of the Euclidean time <span class="math inline">\(\tau\)</span>. Because of the change in the coefficient of the time, the sign of the kinetic term is changed.</p>
+</section>
+<section id="the-instanton-gas" class="level1">
+<h1>The instanton gas</h1>
+<p>Consider the double-well potential (for the real time), such as the following:</p>
+<p><span class="math display">\[V(q)=V_0\left(-\frac{1}{2}a^2q^2+\frac{1}{4}q^4\right).\]</span></p>
+<p>This potential has two minima at <span class="math inline">\(q=\pm a\)</span> and one (local) maxima at <span class="math inline">\(q=0\)</span>.</p>
+<p>By executing the Wick rotation, we got a “Hamiltonian-like” Lagrangian, whose sign of potential term is changed. Therefore, it is effective to reckon motion over the inverted potential: <span class="math inline">\(V\to-V\)</span>. Under this inversion, the potential has two maxima at <span class="math inline">\(q=\pm a\)</span> and one (local) minimum at <span class="math inline">\(q=0\)</span>. Now we can find a classical solution that connects the two potential maxima <strong>in the imaginary time</strong>.</p>
+<p>The classical solution of the Euclidean equation of motion that connects the two potential-maxima is called an <strong>instanton solution</strong><span class="math inline">\((-a\to a)\)</span> while a solution traversing the same path but in the opposite direction is called an <strong>anti-instanton solution</strong><span class="math inline">\((a\to -a)\)</span>.</p>
+<p>To proceed, we must first compute the classical action associated with a single-instanton solution. Here, the Lagrangian is given by</p>
+<p><span class="math display">\[L=\frac{1}{2}m\dot{q}^2+V(q)\]</span></p>
+<p>By applying the Euler-Lagrange equation, we get the equation of motion:</p>
+<p><span class="math display">\[m\ddot{q_\mathrm{cl}}=\partial_q V(q_\mathrm{cl})\]</span></p>
+<p>Multiplying the equation by <span class="math inline">\(\dot{q}\)</span> and integrating over the imaginary time <span class="math inline">\(\tau\)</span>, we get the classical action:</p>
+<p><span class="math display">\[\frac{m\dot{q}_\mathrm{cl}^2}{2}=V(q_\mathrm{cl})+\mathrm{const.}\]</span></p>
+<p>To determine the constant, apply the condition: if <span class="math inline">\(q_\mathrm{cl}=\pm a,\;V(q_\mathrm{cl})=0\)</span></p>
+<p><span class="math display">\[\frac{m\dot{q}_\mathrm{cl}^2}{2}=V(q)\]</span></p>
+<p>With this result, we obtained the classical action of the instanton solution:</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_\mathrm{inst}&amp;=\int_{0}^{\tau}\left(\frac{1}{2}m\dot{q}_\mathrm{cl}^2+V(q_\mathrm{cl})\right) d\tau\\
+&amp;=\int_{0}^{\tau}m\dot{q}_\mathrm{cl}^2 d\tau\\
+&amp;=\int_{0}^{\tau}m\dot{q}_\mathrm{cl} \frac{d q_\mathrm{cl}}{d\tau}d\tau\\
+&amp;=\int_{-a}^{a}m\dot{q}_\mathrm{cl} d q_\mathrm{cl}\\
+&amp;=\int_{-a}^{a}\sqrt{2mV(q_\mathrm{cl})} d q_\mathrm{cl}\\
+\end{aligned}
+\]</span></p>
+<p>Notice that <span class="math inline">\(S_\mathrm{inst}\)</span> is determined solely by the potential <span class="math inline">\(V(q)\)</span>.</p>
+<p>Here, we assume <span class="math inline">\(V''(\pm a)=m\omega^2\)</span>, namely, <span class="math inline">\(V(q)\simeq \frac{1}{2}m\left(q\mp a\right)^2\)</span>. Substituting this for the following equation and differentiating for <span class="math inline">\(\tau\)</span>, <span class="math display">\[
+\begin{aligned}
+\frac{m\dot{q}^2}{2}&amp;=V(q)\\
+\frac{m\dot{q}^2}{2}&amp;=\frac{1}{2}m\omega^2\left(q\mp a\right)^2\\
+\ddot{q}&amp;=\omega^2\left(q\mp a\right)\\
+(d_\tau^2-\omega^2)\left(q\mp a\right)&amp;=0\\
+q\mp a&amp;=Ae^{\omega\tau}+Be^{-\omega\tau}\\
+\end{aligned}
+\]</span> where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are constants. We don’t care about divergent terms, so we set <span class="math inline">\(A=0\)</span>. For large <span class="math inline">\(\tau\)</span>, we have <span class="math inline">\(q\sim \pm a + Be^{-\omega\tau}\)</span>. Thus, the time spread of instantons is determined by the oscillator frequency of the local potential minima (the maxima of the inversion potential) and can be considered short if the tunneling occurs on a much larger time scale than that.</p>
+<p>The fact that the instanton configuration is limited to a narrow time interval is important in that there are approximate solutions to the stationary equations involving further anti-instanton and instanton pairs. According to the general idea of the saddle-point method, the path integral is obtained by summing over all solutions of the saddle-point equation, that is, over all instanton configurations. The summation over multiple instanton configurations called <strong>instanton gas</strong>, is greatly simplified by the fact that the transition times of individual instantons are short and the number of instantons that can be accommodated in a finite time interval is dilute without being too large.</p>
+</section>
+<section id="practical-calculation" class="level1">
+<h1>Practical calculation</h1>
+<p>In practice, multi-instanton configuations imply a transition amplitude: <span class="math display">\[G(a,\pm a;\tau)\simeq \sum_{n\mathrm{\;even/odd}} K^n\int_0^\tau d\tau_1 \int_0^{\tau_1} d\tau_2 \cdots \int_0^{\tau_{n-1}} d\tau_{n} A_n\left(\tau_1,\cdots,\tau_n\right)\]</span> where <span class="math inline">\(A_n\)</span> denotes the amplitude of the <span class="math inline">\(n\)</span>-instanton configuration and <span class="math inline">\(K\)</span> is a constant to absorb the dimention <span class="math inline">\(\mathrm{\left[time\right]}^n\)</span>. In order to connect <span class="math inline">\(a\)</span> with <span class="math inline">\(\pm a\)</span>, the number of instantons must be even/odd.</p>
+<p>In general, amplitude <span class="math inline">\(A_n\)</span> can be decomposed into a product of two factors: the classical part <span class="math inline">\(A_{n,\mathrm{cl}}\)</span> and the quantum part <span class="math inline">\(A_{n,\mathrm{q}}\)</span>. The classical contribution <span class="math inline">\(A_{n,\mathrm{cl}}\)</span> is given by the action of the instanton configuration. On the other hand, the quantum contribution <span class="math inline">\(A_{n,\mathrm{q}}\)</span> is given by quadratic fluctuations around the classical solution.</p>
+<p>Because each instanton has the same classical action, the classical contribution is given by the following: <span class="math display">\[A_{n,\mathrm{cl}}\left(\tau_1,\cdots,\tau_n\right)=e^{-nS_\mathrm{inst}/\hbar }\]</span> where <span class="math inline">\(S_\mathrm{inst}\)</span> is the classical action of a single instanton.</p>
+<p>There are some clues to derive the quantum contribution <span class="math inline">\(A_{n,\mathrm{q}}\)</span>, revoke the fact that quantum fluctuations around a classical configuration which stays for a (real) time <span class="math inline">\(t\)</span> at the bottom of the well result in a factor <span class="math inline">\(\sqrt{1/\sin{\omega t}}\)</span> (the remaining constants are absorbed into the constant <span class="math inline">\(K\)</span>). Simply rotating to the imaginary time <span class="math inline">\(t\to -i\tau\)</span>, we get the factor <span class="math inline">\(\sqrt{1/\sinh{\omega\tau}}\)</span>. Assuming the dillute instanton gas, <span class="math inline">\(\tau\)</span> is so large that this approximation is allowed (It takes the particle much longer to tunnel through a high barrier than to oscillate in either of the wells of the real potential.):</p>
+<p><span class="math display">\[\sqrt{\frac{1}{\sinh{\omega\tau}}}\sim e^{-\omega \tau/2}\]</span></p>
+<p>Thus, the total amplitude is given by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A_n\left(\tau_1,\cdots,\tau_n\right)&amp;\sim e^{-nS_\mathrm{inst}/\hbar}\prod_{i=1}^n e^{-\omega \tau_i/2}\\
+&amp;=e^{-nS_\mathrm{inst}/\hbar} e^{-\omega \tau/2}\\
+G(a,\pm a;\tau)&amp;\simeq \sum_{n\mathrm{\;even/odd}}K^n e^{-nS_\mathrm{inst}/\hbar} e^{-\omega \tau/2}\int_0^\tau d\tau_1 \int_0^{\tau_1} d\tau_2 \cdots \int_0^{\tau_{n-1}} d\tau_{n}\\
+&amp;= e^{-\omega \tau/2}\sum_{n\mathrm{\;even/odd}}K^n e^{-nS_\mathrm{inst}/\hbar} \frac{\tau^n}{n!}\\
+&amp;= e^{-\omega \tau/2}\sum_{n\mathrm{\;even/odd}} \frac{\left(K\tau e^{-S_\mathrm{inst}/\hbar}\right)^n}{n!}\\
+\end{aligned}
+\]</span></p>
+<p>Finally, we obtain the transition amplitude: <span class="math display">\[G(a,a;\tau)\simeq Ce^{-\omega \tau/2}\cosh{\left(K\tau e^{-S_\mathrm{inst}/\hbar}\right)}\]</span> <span class="math display">\[G(a,-a;\tau)\simeq Ce^{-\omega \tau/2}\sinh{\left(K\tau e^{-S_\mathrm{inst}/\hbar}\right)}\]</span></p>
+<p>where <span class="math inline">\(C\)</span> is some factor that depends in a non-exponential way on the transition time.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
