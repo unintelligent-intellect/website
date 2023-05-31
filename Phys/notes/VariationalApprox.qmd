@@ -1,0 +1,92 @@
+---
+title : "変分原理によるハミルトニアンの近似"
+bibliography: qngd_files/ref.bib
+---
+
+## 指数関数に関するJensenの不等式
+
+指数関数は下に凸であるから、**Jensenの不等式**が成り立つ：
+
+$$e^{-\sum_i p_i x_i}\leq \sum_i p_i e^{- x_i}$$
+
+証明は @JensenWiki を参照するとよい。
+
+## 変分自由エネルギー
+
+物理系の構造はハミルトニアンやラグランジアンといった関数が決定する。
+量子系においてはこれらは行列となるが、古典系で関数系が異なることと、
+量子系で行列要素の入り方によって物理系の性質が決まることと対応している。
+
+量子系のハミルトニアンを考える。
+エネルギー固有値・固有状態が未知であり、解くのが困難なハミルトニアンを $H$ とする。
+$H$ に類似した構造を持ち、$H$ の近似として有効だとされている解きやすいハミルトニアンを $H_0$ とする。それぞれの対角表示を以下で与える：
+
+$$H=\sum_n E_n\ket{n}\bra{n}$$
+$$H_0=\sum_{n_0} E_{n_0}\ket{n_0}\bra{n_0}$$
+
+系の逆温度を $\beta$ として、2つの自由エネルギーを定義する。
+
+$$F=-\frac{1}{\beta}\ln{\left[{\rm Tr}\left[e^{-\beta H}\right]\right]}$$
+$$F_v\left[E_{n_0},\ket{n_0}\right]=-\frac{1}{\beta}\ln{\left[{\rm Tr}\left[e^{-\beta\left(H_0+\braket{H-H_0}_0\right)}\right]\right]}=-\frac{1}{\beta}\ln{\left[{\rm Tr}\left[e^{-\beta H_0}\right]\right]}+\braket{H-H_0}_0$$
+
+ただし、$\braket{\cdots}_0={\rm Tr}\left[\cdots e^{-\beta H_0}\right]$ を表す。
+$Z_0={\rm Tr}\left[e^{-\beta H_0}\right],\,p_n=e^{-\beta\Braket{n_0|H_0|n_0}}/Z_0$ として、
+$$
+e^{-\beta\braket{H-H_0}_0}
+=e^{-\beta\sum_{n_0}p_n\Braket{n_0|H-H_0|n_0}}
+$$
+Jensenの不等式から
+$$
+\leq \sum_{n_0}p_n e^{-\beta\Braket{n_0|H-H_0|n_0}}= \frac{1}{Z_0}\sum_{n_0} e^{-\beta\Braket{n_0|H|n_0}}
+$$
+
+つまり $e^{-\beta\braket{H-H_0}_0}\leq \frac{1}{Z_0}\sum_{n_0} e^{-\beta\Braket{n_0|H|n_0}}$ が成り立つ。
+
+ここで、 $\ket{n_0}=\sum_m c_{mn}\ket{n}$ とする。
+すると、要素を $c_{mn}$ にもつ行列はユニタリー行列になる。
+
+$\Braket{n_0|H|n_0}=\sum_{mm'}\Braket{n|c^*_{m'n}H c_{mn}|n}=\sum_{m}|c_{mn}|^2 E_n$ が成立し、$\sum_{m}|c_{mn}|^2=1$ であるから、再びJensenの不等式を用いて、
+$$\frac{1}{Z_0}\sum_{n_0} e^{-\beta\Braket{n_0|H|n_0}}=\frac{1}{Z_0}\sum_{n} e^{-\beta\sum_{m}|c_{mn}|^2 E_n}\leq \frac{1}{Z_0}\sum_{n} \sum_{m}|c_{mn}|^2 e^{-\beta  E_n}$$
+
+$$=\frac{1}{Z_0}\sum_{n} e^{-\beta  E_n}=\frac{Z}{Z_0}$$
+
+示せた不等式は、結局
+
+$$e^{-\beta\braket{H-H_0}_0}\leq\frac{Z}{Z_0}$$
+
+である。両辺の対数をとり、係数を揃えれば
+
+$$\braket{H-H_0}_0\geq-\frac{1}{\beta}\ln{Z}+\frac{1}{\beta}\ln{Z_0}$$
+
+つまり、
+
+$$F_v=-\frac{1}{\beta}\ln{Z_0}+\braket{H-H_0}_0\geq-\frac{1}{\beta}\ln{Z}=F$$
+$$F_v\geq F$$
+
+がわかる。等号は、例えば $H=H_0$ であれば達成されることが自明にわかる。
+
+## Kullback-Leibler情報量
+
+変分原理の不等式から、 $F_v- F$ という量に興味が向くのは自然なことだと考えられる。
+これを改めて書き下すと
+$$F_v-F=\frac{1}{\beta}\ln{Z}-\frac{1}{\beta}\ln{Z_0}+{\rm Tr}\left[\left(H-H_0\right) e^{-\beta H_0}\right]$$
+$$=\frac{1}{\beta}\left[\ln{Z}+{\rm Tr}\left[\beta H e^{-\beta H_0}\right]-\ln{Z_0}-{\rm Tr}\left[\beta H_0 e^{-\beta H_0}\right]\right]$$
+
+$$=\frac{1}{\beta}\left[{\rm Tr}\left[\frac{e^{-\beta H_0}}{Z_0}\ln{ Z}\right]+{\rm Tr}\left[\beta H e^{-\beta H_0}\right]-{\rm Tr}\left[\frac{e^{-\beta H_0}}{Z_0}\ln{Z_0}\right]-{\rm Tr}\left[\beta H_0 e^{-\beta H_0}\right]\right]$$
+
+$$=\frac{1}{\beta}\left[-{\rm Tr}\left[\frac{e^{-\beta H_0}}{Z_0}\ln{\frac{e^{-\beta H}}{Z}} \right]+{\rm Tr}\left[\frac{e^{-\beta H_0}}{Z_0}\ln{\frac{e^{-\beta H_0}}{Z_0}}\right]\right]$$
+
+ここで、統計演算子を $\rho=\frac{e^{-\beta H}}{Z} ,\,\sigma=\frac{e^{-\beta H_0}}{Z_0}$ と定義する。すると、
+
+$$F_v-F=\frac{1}{\beta}\left[-{\rm Tr}\left[\rho\ln{\sigma} \right]+{\rm Tr}\left[\rho\ln{\rho}\right]\right]$$
+
+これは古典系ではKullback-Leibler情報量に対応する。実際、オブザーバブル $\mathcal{O}$ が対角表示であれば ${\rm Tr}[\mathcal{O}]=\sum_i O_i$ と関連付けることができて、
+**Kullback-Leibler情報量**を $\mathcal{D}\left(\rho||\sigma\right)=-\sum_i \rho_i\ln{\frac{\sigma_i}{\rho_i}}$ で定義すると
+
+$$F_v-F\simeq -\frac{1}{\beta}\sum_i \rho_i\ln{\frac{\sigma_i}{\rho_i}}=\frac{1}{\beta}\mathcal{D}\left(\rho||\sigma\right)$$
+
+と書くことができる。量子系の場合は演算子表示のまま
+
+$$\mathcal{D}\left(\rho||\sigma\right)={\rm Tr}\left[\rho\ln{\rho}\right]-{\rm Tr}\left[\rho\ln{\sigma} \right]$$
+
+と定義すればよい。$\rho=\sigma$ であればKL情報量は0だから、KL情報量は異なる統計演算子の間のある種の距離を与えると考えられる。KL情報量はカノニカル分布に限らず一般の分布に対して非負であることが示せるが、もちろん、KL情報量は定義が非対称なので距離の公理を満たさない。更には、三角不等式すら満たさない。しかし後で見るように、十分似た確率分布に対するKL情報量は距離とみなすことができる。カノニカル分布に限って言い換えれば、ハミルトニアン $H_0$ が $H$ の良い近似を与えるハミルトニアンであればあるほどKL情報量は小さいから、ハミルトニアンの距離を表すとも言える。

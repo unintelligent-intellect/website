@@ -1,0 +1,275 @@
+---
+title: "Quantum Natural Gradient"
+bibliography: qngd_files/ref.bib
+---
+
+# Natural Gradient
+
+## Vanilla Gradient
+
+最急降下法などで用いられる勾配を、@Josh2019 に準じて、ここではVanilla Gradientと呼ぶことにする。
+
+損失関数をパラメータ$\theta^i$の関数として、 $L(\theta)$ としよう。
+Vanilla Gradientは単純に損失関数の勾配で定義される：
+
+$$\partial_i L=\frac{\partial L(\theta)}{\partial \theta^i}$$
+
+この勾配から最急降下法で用いられる更新式を作ると、幅を $\alpha>0$ 、パラメータの新しさを $\cdot [k]$ などとして表すこととして、ベクトルの変換性を無視すれば
+
+$$\theta^i[k+1]=\theta^i[k]-\alpha\left.\frac{\partial L(\theta)}{\partial \theta^i}\right|_{\theta^i=\theta^i[k]}$$
+
+となる。
+
+これ以降、物理学とのアナロジーを意識しながら議論を進める。
+素直な対応としては、損失関数をパラメータ空間上に定義された実スカラー場、
+勾配をパラメータ空間上に定義された実ベクトル場とするアナロジーが考えられる。
+
+## Natural Gradient
+
+Vanilla Gradientにはベクトルの変換性が一致していないという問題がある。
+そこで、勾配部分の変換性を計量テンソルを使って強引に合わせてみる：
+
+$$\theta^i[k+1]=\theta^i[k]-\alpha g^{ij}\left.\frac{\partial L(\theta)}{\partial \theta^j}\right|_{\theta^j=\theta^j[k]}$$
+
+ここで登場した逆計量つき勾配が**Natural Gradient(自然勾配)**である。
+
+自然勾配を用いたパラメータ更新ダイナミクスは座標変換に対して不変に保たれる。
+このことを示してみよう。
+まず、変換 $\eta^j=T_i^j\theta^i$ に対してベクトルが不変であることは、
+$A'^j(\eta)=T_k^jA^k(\theta)$ と変換することに同値であった。
+
+$$\frac{\partial L'(\eta)}{\partial \eta^j}=\frac{\partial \theta^k}{\partial \eta^j}\frac{\partial L(\theta)}{\partial \theta^k}=\left(T^{-1}\right)^k_j \frac{\partial L(\theta)}{\partial \theta^k}$$
+$$T_i^j\left(T^{-1}\right)^k_j=\delta^k_i$$
+であるから、
+
+$$
+\eta^j[n+1]
+=\eta^j[n]-\alpha g^{jk}\left.\frac{\partial L'(\eta)}{\partial \eta^k}\right|_{\eta^k=\eta^k[n]}
+=T_i^j\theta^i[n]-\alpha T_m^jT_o^kg^{mo}\left(T^{-1}\right)_k^i\left.\frac{\partial L(\theta)}{\partial \theta^i}\right|_{\theta^i=\theta^i[n]}
+$$
+
+$$
+=T_i^j\theta^i[n]-\alpha T_m^j\delta_o^i g^{mo}\left.\frac{\partial L(\theta)}{\partial \theta^i}\right|_{\theta^i=\theta^i[n]}
+=T_i^j\theta^i[n]-\alpha T_m^j g^{mi}\left.\frac{\partial L(\theta)}{\partial \theta^i}\right|_{\theta^i=\theta^i[n]}
+$$
+$$
+=T_i^j\theta^i[n]-\alpha T_i^j g^{ik}\left.\frac{\partial L(\theta)}{\partial \theta^k}\right|_{\theta^k=\theta^k[n]}
+=T_i^j\left[\theta^i[n]-\alpha g^{ik}\left.\frac{\partial L(\theta)}{\partial \theta^k}\right|_{\theta^k=\theta^k[n]}\right]=T_i^j\theta^j[n+1]
+$$
+
+となり、$\eta^j[n+1]=T_i^j\theta^j[n+1]$ が示せた。
+これは座標変換に対して不変なベクトルの変換性に従っているので、
+自然勾配を用いたダイナミクスは座標変換に対して不変であることがわかる。
+計算すればすぐに分かるが、最急降下法の更新ダイナミクスは座標変換に対して不変でない。
+
+@amari-naturalgradient によると、自然勾配は単純な勾配よりも速く損失関数を最小化することが知られている。
+
+
+
+# Fisher情報行列
+
+しばらく古典確率分布について考える。
+パラメータに依存する確率分布 $p_\theta(x)$ のパラメータを最適化して、目標の確率分布 $p(x)$ の最も良い近似となるようにする問題を考える。
+
+先程の議論でKL情報量が確率分布の距離のようなものを与えることを見たから、
+KL情報量 $\mathcal{D}\left(p||p_\theta\right)=\sum_i p(x)\ln{\frac{p(x)}{p_\theta(x)}}$ を最小にする確率分布を求めれば問題が解けたことになる。
+
+Natural Gradient Desentを用いて最小化を行うことを考えると計量の情報が必要となる。
+十分近い2つの確率分布を用意し、KL情報量の計量を求めていく。
+
+## 重要な関係式
+KL情報量の計量を求めるのに便利な関係式を先に導いておこう。
+まず、いかなる確率分布も総和は1である：
+$$\sum_xp_\theta(x)=1$$
+これを両辺パラメータ $\theta$ で微分して
+$$\sum_x\partial_i p_\theta(x)=\sum_xp_\theta(x)\partial_i \ln{p}_\theta(x)$$
+
+$$=\mathbb{E}_\theta \left[\partial_i \ln{p}_\theta(x)\right]=0$$
+
+これは尤度の期待値が0であることを意味する。これをさらに微分して
+
+$$\partial_j\sum_xp_\theta(x)\partial_i \ln{p}_\theta(x)=\sum_x\partial_j p_\theta(x)\partial_i \ln{p}_\theta(x)+\sum_xp_\theta(x)\partial_j\partial_i \ln{p}_\theta(x)$$
+
+$$=\sum_xp_\theta(x)\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)+\sum_xp_\theta(x)\partial_j\partial_i \ln{p}_\theta(x)$$
+
+$$=\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]+\mathbb{E}_\theta \left[\partial_j\partial_i \ln{p}_\theta(x)\right]=0$$
+
+つまり、
+
+$$\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]=-\mathbb{E}_\theta \left[\partial_j\partial_i \ln{p}_\theta(x)\right]$$
+である。
+次節の計算で以上の公式を用いる。
+
+## KL情報量の計量
+
+計算の簡便のために、まずは十分異なる確率分布に対するKL情報量 $\mathcal{D}\left(p||p_\theta\right)$ から始めて、計算が終わった後で2つの確率分布を近づけることを考える。
+
+まず、1階微分は
+$$\partial_i \mathcal{D}\left(p||p_\theta\right)=\sum_i p(x)\partial_i \ln{\frac{p(x)}{p_\theta(x)}}=-\sum_i p(x) \frac{\partial_i p_\theta(x)}{p_\theta(x)}$$
+
+続けて、2階微分は
+
+$$\partial_j \partial_i \mathcal{D}\left(p||p_\theta\right)=-\sum_i p(x) \partial_j\frac{\partial_i p_\theta(x)}{p_\theta(x)}$$
+
+$$=\sum_i p(x) \frac{\partial_i p_\theta(x)\partial_j p_\theta(x)}{p_\theta(x)^2}-\sum_i p(x) \frac{\partial_j\partial_i p_\theta(x)}{p_\theta(x)}$$
+$$=\sum_i p(x) \partial_i \ln{p}_\theta(x)\partial_j \ln{p}_\theta(x) -\sum_i p(x) \frac{\partial_j\partial_i p_\theta(x)}{p_\theta(x)}$$
+
+ここで、
+
+$$\partial_j\partial_i p_\theta(x)=\partial_j\left(p_\theta(x)\partial_i \ln{p}_\theta(x)\right)=\partial_j p_\theta(x)\partial_i \ln{p}_\theta(x) +p_\theta(x)\partial_j\partial_i \ln{p}_\theta(x)$$
+
+$$=p_\theta(x)\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x) +p_\theta(x)\partial_j\partial_i \ln{p}_\theta(x)$$
+
+であるから、
+
+$$\partial_j \partial_i \mathcal{D}\left(p||p_\theta\right)=\sum_i p(x) \partial_i \ln{p}_\theta(x)\partial_j \ln{p}_\theta(x) -\sum_i p(x)\left( \partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x) +\partial_j\partial_i \ln{p}_\theta(x)\right)$$
+
+となる。今、$p\to p_\theta$ に近づけていくと、前節に示した関係から1階微分は0となり、
+二階微分は
+
+$$\partial_j \partial_i \mathcal{D}\left(p||p_\theta\right)=-\sum_i p_\theta(x)\partial_j\partial_i \ln{p}_\theta(x)=-\mathbb{E}_\theta \left[\partial_j\partial_i \ln{p}_\theta(x)\right]=\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]$$
+
+がわかる。結果的に、KL情報量は以下のように展開される：
+
+$$\mathcal{D}\left(p_\theta||p_{\theta+d\theta}\right)=\frac{1}{2}\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]d\theta^id\theta^j$$
+
+同じことだが、計量は
+
+$$g_{ij}=\frac{1}{2}\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]$$
+
+だとわかる。KL情報量の二階微分から出てきた寄与
+
+$$\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]$$
+
+は**Fishcer情報行列**と呼ばれる。
+情報幾何学では、Fisher情報行列はパラメータ空間の曲がり具合を特徴づける重要な量として活躍する。
+
+---
+
+# Quantum Natural Gradient
+
+ここでは、@Stokes2020quantumnatural に準じてQuantum Natural Gradient (QNG)を導入する。
+
+
+## 量子状態間の距離の定義
+
+量子状態 $\ket{\psi},\,\ket{\phi}$ の距離を、コサイン類似度の角度で定義する：
+
+$$
+d\left(\ket{\psi},\ket{\phi}\right)=\arccos{\left|\Braket{\psi|\phi}\right|}
+$$
+
+## 距離の公理
+
+$d\left(\ket{\psi},\ket{\phi}\right)=\arccos{\left|\Braket{\psi|\phi}\right|}$ は本当に距離なのか確認したい。
+
+* $d(a,a)=0$: 自明に成立する。
+* $d(a,b)=d(b,a)$ : 自明に成立する。
+* $d(a,b)+d(b,c)\geq d(a,c)$ : 成立する。以下を参照。
+
+三角不等式が成立することの略証を示す。
+まず、全ての内積は適当なグローバル位相を各々のベクトルに掛けることで実になるようにとることができる。
+このようにして得た3つのベクトルは単位超球面上の3点であり、不等式の各項は2点間の角度を表している。
+角度は球面上の円弧の長さに対応するので、3辺の長さについて三角不等式が成り立つことから、問題の三角不等式も成り立つ。
+
+以上からわかるように、三角不等式はふつう等式とならない。 $a=\ket{0},b=\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right),c=\frac{1}{\sqrt{2}}\left(\ket{0}+i\ket{1}\right)$ とすると全ての元の間の距離が $\arccos{\frac{1}{\sqrt{2}}}=\frac{\pi}{4}$となるので等号は成立しない。
+
+## 性質
+
+距離の非負性は距離の公理から導けるが、
+$\arccos{}$ の値域を $[0,\pi]$ にとれば値域が正となるようにできる。
+また、引数に絶対値が乗っていることから結局値域は $[0,\pi/2]$ まで制限される。
+
+他にも、重要な性質を以下に記した：
+
+* $d>0$
+* $d(\ket{0},\ket{1})=\frac{\pi}{2}$
+* $\arccos^2{\sqrt{x}}\simeq -\left(x-1\right)+\mathcal{o}\left(\left(x-1\right)\right)$
+
+## 計量とQuantum Natural Gradient
+
+$\theta$ でパラメータ付けした、微小な違いしか無い2ベクトル $\ket{\psi_\theta},\ket{\psi_{\theta+d\theta}}$
+の距離を2次まで展開して計量を見てみる。計量 $g_{ij}$の定義は
+
+$$
+d^2\left(\ket{\psi_\theta},\ket{\psi_{\theta+d\theta}}\right)
+=\sum_{i,j}g_{ij}(\theta)d\theta^i d\theta^j
+$$
+
+とする。
+
+まずは $\Braket{\psi_\theta|\psi_{\theta+d\theta}}$ を展開しておく。
+$\psi_{\theta+d\theta}= \psi_{\theta}+\partial_i\psi_{\theta}d\theta^i+\frac{1}{2}\partial_i\partial_j\psi_{\theta}d\theta^id\theta^j+\mathcal{O}(d\theta^3)$
+だから、
+$$\Braket{\psi_\theta|\psi_{\theta+d\theta}}\simeq \Braket{\psi_\theta|\psi_{\theta}}+\Braket{\psi_\theta|\partial_i\psi_{\theta}}d\theta^i+\frac{1}{2}\Braket{\psi_\theta|\partial_i\partial_j\psi_{\theta}}d\theta^id\theta^j$$
+
+$$= 1+\Braket{\psi_\theta|\partial_i\psi_{\theta}}d\theta^i+\frac{1}{2}\Braket{\psi_\theta|\partial_i\partial_j\psi_{\theta}}d\theta^id\theta^j$$
+
+すると、$|\Braket{\psi_\theta|\psi_{\theta+d\theta}}|^2$ を求めることができる：
+
+$$|\Braket{\psi_\theta|\psi_{\theta+d\theta}}|^2$$
+$$
+= 1+\left(\Braket{\psi_\theta|\partial_i\psi_{\theta}}+\Braket{\partial_i\psi_\theta|\psi_{\theta}}\right)d\theta^i+\left(\frac{1}{2}\Braket{\psi_\theta|\partial_i\partial_j\psi_{\theta}}+\frac{1}{2}\Braket{\partial_i\partial_j\psi_\theta|\psi_{\theta}}+\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}\right)d\theta^id\theta^j
+$$
+
+$\partial_i\braket{\psi_\theta|\psi_\theta}=\braket{\partial_i\psi_\theta|\psi_\theta}+\braket{\psi_\theta|\partial_i\psi_\theta}$
+である一方、$\partial_i\braket{\psi_\theta|\psi_\theta}=\partial_i 1=0$ であるから、
+一次の項は0となる。
+
+2次の項についても整理してみる。$\partial_j\partial_i\braket{\psi_\theta|\psi_\theta}=\braket{\partial_j\partial_i\psi_\theta|\psi_\theta}+\braket{\psi_\theta|\partial_j\partial_i\psi_\theta}+\braket{\partial_i\psi_\theta|\partial_j\psi_\theta}+\braket{\partial_j\psi_\theta|\partial_i\psi_\theta}$
+である一方、$\partial_j\partial_i\braket{\psi_\theta|\psi_\theta}=\partial_j\partial_i 1=0$ であるから、
+
+$$
+|\Braket{\psi_\theta|\psi_{\theta+d\theta}}|^2 
+= 1+\left(\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}-\frac{1}{2}\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}-\frac{1}{2}\Braket{\partial_j\psi_\theta|\partial_i\psi_{\theta}}\right)d\theta^id\theta^j
+$$
+
+と書くことができる。$x=1$ 周りでの $\arccos{}$ のテイラー展開 $\arccos^2{\sqrt{x}}\simeq 1-x^2$ を使って
+
+$$d^2\left(\ket{\psi_\theta},\ket{\psi_{\theta+d\theta}}\right)=\arccos^2{|\Braket{\psi_{\theta}|\psi_{\theta+d\theta}}|}\simeq 1-|\Braket{\psi_{\theta}|\psi_{\theta+d\theta}}|^2$$
+
+$$=\left(\frac{1}{2}\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}+\frac{1}{2}\Braket{\partial_j\psi_\theta|\partial_i\psi_{\theta}}-\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}\right)d\theta^id\theta^j$$
+
+を得る。結局、計量は
+
+$$g_{ij}(\theta)=\frac{1}{2}\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}+\frac{1}{2}\Braket{\partial_j\psi_\theta|\partial_i\psi_{\theta}}-\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}$$
+$$={\rm Re}\left(\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}-\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}\right)$$
+
+ということになる。文献ではこの形で止められていたが、1次の項を落としたときの議論によって
+
+$$g_{ij}(\theta)={\rm Re}\left(\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}+\Braket{\psi_\theta|\partial_i\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}\right)$$
+
+と書くこともできる。
+
+@Stokes2020quantumnatural によると、$g_{ij}$ は**Fubini-Study計量テンソル**、実部を取る前のテンソル $\Braket{\partial_i\psi_\theta|\partial_j\psi_{\theta}}-\Braket{\partial_i\psi_\theta|\psi_{\theta}}\Braket{\psi_\theta|\partial_j\psi_{\theta}}$
+は**Quantum Geometric Tensor**と呼ばれる。
+
+
+
+**Quantum Natural Gradient**は、この計量を用いて更新式を作ったものである。
+
+$\theta^i[n+1]=\theta^i[n]-\eta g^{ij}\partial_j \mathcal{L}|_{\theta^i=\theta^i[n]}$
+
+## 古典情報量との対応
+
+Fubini-Study 計量テンソルの導出をFisher情報行列の導出と比較すると類似点が多いことに気づく。
+ここでは、Fubini-Study 計量テンソルからFisher情報行列が導かれることについて論じる。
+
+状態を $\ket{\psi_\theta}=\sum_x c_\theta(x)\ket{x}$ と展開する。
+ここで $p_\theta(x)=c_\theta(x)^2$ と対応させる事にする。
+両辺微分して
+
+$$\ket{\partial_i\psi_\theta}=\sum_x \partial_i\sqrt{p_\theta(x)}\ket{x}=\frac{1}{2}\sum_x \frac{1}{\sqrt{p_\theta(x)}}\partial_ip_\theta(x)\ket{x}$$
+
+すると $\Braket{\psi_\theta|\partial_i\psi_\theta}$ は以下のようになる：
+$$\Braket{\psi_\theta|\partial_i\psi_\theta}=\frac{1}{2}\sum_{x,x'} \frac{\sqrt{p_\theta(x')}}{\sqrt{p_\theta(x)}}\partial_ip_\theta(x)\Braket{x'|x}=\frac{1}{2}\sum_{x} \partial_ip_\theta(x)=\frac{1}{2}\partial_i\sum_{x} p_\theta(x)=0$$
+
+一方、$\Braket{\partial_i\psi_\theta|\partial_j\psi_\theta}$ は
+
+$$\Braket{\partial_i\psi_\theta|\partial_j\psi_\theta}=\frac{1}{4}\sum_{x,x'} \frac{1}{\sqrt{p_\theta(x)p_\theta(x')}}\Braket{x'|x}\left(\partial_i p_\theta(x)\right)\left(\partial_j p_\theta(x')\right)$$
+
+$$=\frac{1}{4}\sum_{x} \frac{1}{p_\theta(x)}\left(\partial_i p_\theta(x)\right)\left(\partial_j p_\theta(x)\right)$$
+
+$$=\frac{1}{4}\sum_{x} p_\theta(x)\partial_i \ln{p}_\theta(x)\partial_j \ln{p}_\theta(x)=\frac{1}{4}\mathbb{E}_\theta \left[\partial_j \ln{p}_\theta(x)\partial_i \ln{p}_\theta(x)\right]$$
+
+以上のように、Fubini-StudyはFisher情報行列には（古典確率分布と量子力学の波動関数の意味で）対応関係がある。

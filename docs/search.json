@@ -18,14 +18,14 @@
     "href": "Physics.html#notes",
     "title": "Physics",
     "section": "Notes",
-    "text": "Notes\n\n【English】Derivation of the instanton solution by the path integral formalism\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[2]\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[6]\n【日本語】アシュクロフト・マーミン「固体物理の基礎」2章\n【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ"
+    "text": "Notes\n\n【English】Derivation of the instanton solution by the path integral formalism\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[2]\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[6]\n【日本語】アシュクロフト・マーミン「固体物理の基礎」2章\n【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ\n【日本語】Quantum Natural Gradient\n【日本語】変分原理によるハミルトニアンの近似"
   },
   {
     "objectID": "Physics.html#simulations",
     "href": "Physics.html#simulations",
     "title": "Physics",
     "section": "Simulations",
-    "text": "Simulations\nComing soon…"
+    "text": "Simulations\nYou can enjoy simulations of famous physics systems on this site."
   },
   {
     "objectID": "index.html",
@@ -33,6 +33,62 @@
     "title": "Home",
     "section": "",
     "text": "2023/05/13- Published simulation exhibit for the “Applied Physics Expo”, an exhibition project of the UTokyo May Festival. Thanks to the coleagues in my group for their contributions!\n2023/03/13-15 Participated in the spring school of the computational physics in Okinawa.\n2022/09/23-30 Participated in the QEd Summer School 2022 in Okinawa / gave a presentation of my group’s work.\n2021/12/09 Completed the Quantum Software Learning Session hosted by QSRH."
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html",
+    "title": "Quantum Natural Gradient",
+    "section": "",
+    "text": "最急降下法などで用いられる勾配を、Izaac (2019) に準じて、ここではVanilla Gradientと呼ぶことにする。\n損失関数をパラメータ\\(\\theta^i\\)の関数として、 \\(L(\\theta)\\) としよう。 Vanilla Gradientは単純に損失関数の勾配で定義される：\n\\[\\partial_i L=\\frac{\\partial L(\\theta)}{\\partial \\theta^i}\\]\nこの勾配から最急降下法で用いられる更新式を作ると、幅を \\(\\alpha>0\\) 、パラメータの新しさを \\(\\cdot [k]\\) などとして表すこととして、ベクトルの変換性を無視すれば\n\\[\\theta^i[k+1]=\\theta^i[k]-\\alpha\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^i}\\right|_{\\theta^i=\\theta^i[k]}\\]\nとなる。\nこれ以降、物理学とのアナロジーを意識しながら議論を進める。 素直な対応としては、損失関数をパラメータ空間上に定義された実スカラー場、 勾配をパラメータ空間上に定義された実ベクトル場とするアナロジーが考えられる。\n\n\n\nVanilla Gradientにはベクトルの変換性が一致していないという問題がある。 そこで、勾配部分の変換性を計量テンソルを使って強引に合わせてみる：\n\\[\\theta^i[k+1]=\\theta^i[k]-\\alpha g^{ij}\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^j}\\right|_{\\theta^j=\\theta^j[k]}\\]\nここで登場した逆計量つき勾配がNatural Gradient(自然勾配)である。\n自然勾配を用いたパラメータ更新ダイナミクスは座標変換に対して不変に保たれる。 このことを示してみよう。 まず、変換 \\(\\eta^j=T_i^j\\theta^i\\) に対してベクトルが不変であることは、 \\(A'^j(\\eta)=T_k^jA^k(\\theta)\\) と変換することに同値であった。\n\\[\\frac{\\partial L'(\\eta)}{\\partial \\eta^j}=\\frac{\\partial \\theta^k}{\\partial \\eta^j}\\frac{\\partial L(\\theta)}{\\partial \\theta^k}=\\left(T^{-1}\\right)^k_j \\frac{\\partial L(\\theta)}{\\partial \\theta^k}\\] \\[T_i^j\\left(T^{-1}\\right)^k_j=\\delta^k_i\\] であるから、\n\\[\n\\eta^j[n+1]\n=\\eta^j[n]-\\alpha g^{jk}\\left.\\frac{\\partial L'(\\eta)}{\\partial \\eta^k}\\right|_{\\eta^k=\\eta^k[n]}\n=T_i^j\\theta^i[n]-\\alpha T_m^jT_o^kg^{mo}\\left(T^{-1}\\right)_k^i\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^i}\\right|_{\\theta^i=\\theta^i[n]}\n\\]\n\\[\n=T_i^j\\theta^i[n]-\\alpha T_m^j\\delta_o^i g^{mo}\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^i}\\right|_{\\theta^i=\\theta^i[n]}\n=T_i^j\\theta^i[n]-\\alpha T_m^j g^{mi}\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^i}\\right|_{\\theta^i=\\theta^i[n]}\n\\] \\[\n=T_i^j\\theta^i[n]-\\alpha T_i^j g^{ik}\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^k}\\right|_{\\theta^k=\\theta^k[n]}\n=T_i^j\\left[\\theta^i[n]-\\alpha g^{ik}\\left.\\frac{\\partial L(\\theta)}{\\partial \\theta^k}\\right|_{\\theta^k=\\theta^k[n]}\\right]=T_i^j\\theta^j[n+1]\n\\]\nとなり、\\(\\eta^j[n+1]=T_i^j\\theta^j[n+1]\\) が示せた。 これは座標変換に対して不変なベクトルの変換性に従っているので、 自然勾配を用いたダイナミクスは座標変換に対して不変であることがわかる。 計算すればすぐに分かるが、最急降下法の更新ダイナミクスは座標変換に対して不変でない。\nAmari (1998) によると、自然勾配は単純な勾配よりも速く損失関数を最小化することが知られている。"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#重要な関係式",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#重要な関係式",
+    "title": "Quantum Natural Gradient",
+    "section": "重要な関係式",
+    "text": "重要な関係式\nKL情報量の計量を求めるのに便利な関係式を先に導いておこう。 まず、いかなる確率分布も総和は1である： \\[\\sum_xp_\\theta(x)=1\\] これを両辺パラメータ \\(\\theta\\) で微分して \\[\\sum_x\\partial_i p_\\theta(x)=\\sum_xp_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\]\n\\[=\\mathbb{E}_\\theta \\left[\\partial_i \\ln{p}_\\theta(x)\\right]=0\\]\nこれは尤度の期待値が0であることを意味する。これをさらに微分して\n\\[\\partial_j\\sum_xp_\\theta(x)\\partial_i \\ln{p}_\\theta(x)=\\sum_x\\partial_j p_\\theta(x)\\partial_i \\ln{p}_\\theta(x)+\\sum_xp_\\theta(x)\\partial_j\\partial_i \\ln{p}_\\theta(x)\\]\n\\[=\\sum_xp_\\theta(x)\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)+\\sum_xp_\\theta(x)\\partial_j\\partial_i \\ln{p}_\\theta(x)\\]\n\\[=\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]+\\mathbb{E}_\\theta \\left[\\partial_j\\partial_i \\ln{p}_\\theta(x)\\right]=0\\]\nつまり、\n\\[\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]=-\\mathbb{E}_\\theta \\left[\\partial_j\\partial_i \\ln{p}_\\theta(x)\\right]\\] である。 次節の計算で以上の公式を用いる。"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#kl情報量の計量",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#kl情報量の計量",
+    "title": "Quantum Natural Gradient",
+    "section": "KL情報量の計量",
+    "text": "KL情報量の計量\n計算の簡便のために、まずは十分異なる確率分布に対するKL情報量 \\(\\mathcal{D}\\left(p||p_\\theta\\right)\\) から始めて、計算が終わった後で2つの確率分布を近づけることを考える。\nまず、1階微分は \\[\\partial_i \\mathcal{D}\\left(p||p_\\theta\\right)=\\sum_i p(x)\\partial_i \\ln{\\frac{p(x)}{p_\\theta(x)}}=-\\sum_i p(x) \\frac{\\partial_i p_\\theta(x)}{p_\\theta(x)}\\]\n続けて、2階微分は\n\\[\\partial_j \\partial_i \\mathcal{D}\\left(p||p_\\theta\\right)=-\\sum_i p(x) \\partial_j\\frac{\\partial_i p_\\theta(x)}{p_\\theta(x)}\\]\n\\[=\\sum_i p(x) \\frac{\\partial_i p_\\theta(x)\\partial_j p_\\theta(x)}{p_\\theta(x)^2}-\\sum_i p(x) \\frac{\\partial_j\\partial_i p_\\theta(x)}{p_\\theta(x)}\\] \\[=\\sum_i p(x) \\partial_i \\ln{p}_\\theta(x)\\partial_j \\ln{p}_\\theta(x) -\\sum_i p(x) \\frac{\\partial_j\\partial_i p_\\theta(x)}{p_\\theta(x)}\\]\nここで、\n\\[\\partial_j\\partial_i p_\\theta(x)=\\partial_j\\left(p_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right)=\\partial_j p_\\theta(x)\\partial_i \\ln{p}_\\theta(x) +p_\\theta(x)\\partial_j\\partial_i \\ln{p}_\\theta(x)\\]\n\\[=p_\\theta(x)\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x) +p_\\theta(x)\\partial_j\\partial_i \\ln{p}_\\theta(x)\\]\nであるから、\n\\[\\partial_j \\partial_i \\mathcal{D}\\left(p||p_\\theta\\right)=\\sum_i p(x) \\partial_i \\ln{p}_\\theta(x)\\partial_j \\ln{p}_\\theta(x) -\\sum_i p(x)\\left( \\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x) +\\partial_j\\partial_i \\ln{p}_\\theta(x)\\right)\\]\nとなる。今、\\(p\\to p_\\theta\\) に近づけていくと、前節に示した関係から1階微分は0となり、 二階微分は\n\\[\\partial_j \\partial_i \\mathcal{D}\\left(p||p_\\theta\\right)=-\\sum_i p_\\theta(x)\\partial_j\\partial_i \\ln{p}_\\theta(x)=-\\mathbb{E}_\\theta \\left[\\partial_j\\partial_i \\ln{p}_\\theta(x)\\right]=\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]\\]\nがわかる。結果的に、KL情報量は以下のように展開される：\n\\[\\mathcal{D}\\left(p_\\theta||p_{\\theta+d\\theta}\\right)=\\frac{1}{2}\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]d\\theta^id\\theta^j\\]\n同じことだが、計量は\n\\[g_{ij}=\\frac{1}{2}\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]\\]\nだとわかる。KL情報量の二階微分から出てきた寄与\n\\[\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]\\]\nはFishcer情報行列と呼ばれる。 情報幾何学では、Fisher情報行列はパラメータ空間の曲がり具合を特徴づける重要な量として活躍する。"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#量子状態間の距離の定義",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#量子状態間の距離の定義",
+    "title": "Quantum Natural Gradient",
+    "section": "量子状態間の距離の定義",
+    "text": "量子状態間の距離の定義\n量子状態 \\(\\ket{\\psi},\\,\\ket{\\phi}\\) の距離を、コサイン類似度の角度で定義する：\n\\[\nd\\left(\\ket{\\psi},\\ket{\\phi}\\right)=\\arccos{\\left|\\Braket{\\psi|\\phi}\\right|}\n\\]"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#距離の公理",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#距離の公理",
+    "title": "Quantum Natural Gradient",
+    "section": "距離の公理",
+    "text": "距離の公理\n\\(d\\left(\\ket{\\psi},\\ket{\\phi}\\right)=\\arccos{\\left|\\Braket{\\psi|\\phi}\\right|}\\) は本当に距離なのか確認したい。\n\n\\(d(a,a)=0\\): 自明に成立する。\n\\(d(a,b)=d(b,a)\\) : 自明に成立する。\n\\(d(a,b)+d(b,c)\\geq d(a,c)\\) : 成立する。以下を参照。\n\n三角不等式が成立することの略証を示す。 まず、全ての内積は適当なグローバル位相を各々のベクトルに掛けることで実になるようにとることができる。 このようにして得た3つのベクトルは単位超球面上の3点であり、不等式の各項は2点間の角度を表している。 角度は球面上の円弧の長さに対応するので、3辺の長さについて三角不等式が成り立つことから、問題の三角不等式も成り立つ。\n以上からわかるように、三角不等式はふつう等式とならない。 \\(a=\\ket{0},b=\\frac{1}{\\sqrt{2}}\\left(\\ket{0}+\\ket{1}\\right),c=\\frac{1}{\\sqrt{2}}\\left(\\ket{0}+i\\ket{1}\\right)\\) とすると全ての元の間の距離が \\(\\arccos{\\frac{1}{\\sqrt{2}}}=\\frac{\\pi}{4}\\)となるので等号は成立しない。"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#性質",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#性質",
+    "title": "Quantum Natural Gradient",
+    "section": "性質",
+    "text": "性質\n距離の非負性は距離の公理から導けるが、 \\(\\arccos{}\\) の値域を \\([0,\\pi]\\) にとれば値域が正となるようにできる。 また、引数に絶対値が乗っていることから結局値域は \\([0,\\pi/2]\\) まで制限される。\n他にも、重要な性質を以下に記した：\n\n\\(d>0\\)\n\\(d(\\ket{0},\\ket{1})=\\frac{\\pi}{2}\\)\n\\(\\arccos^2{\\sqrt{x}}\\simeq -\\left(x-1\\right)+\\mathcal{o}\\left(\\left(x-1\\right)\\right)\\)"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#計量とquantum-natural-gradient",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#計量とquantum-natural-gradient",
+    "title": "Quantum Natural Gradient",
+    "section": "計量とQuantum Natural Gradient",
+    "text": "計量とQuantum Natural Gradient\n\\(\\theta\\) でパラメータ付けした、微小な違いしか無い2ベクトル \\(\\ket{\\psi_\\theta},\\ket{\\psi_{\\theta+d\\theta}}\\) の距離を2次まで展開して計量を見てみる。計量 \\(g_{ij}\\)の定義は\n\\[\nd^2\\left(\\ket{\\psi_\\theta},\\ket{\\psi_{\\theta+d\\theta}}\\right)\n=\\sum_{i,j}g_{ij}(\\theta)d\\theta^i d\\theta^j\n\\]\nとする。\nまずは \\(\\Braket{\\psi_\\theta|\\psi_{\\theta+d\\theta}}\\) を展開しておく。 \\(\\psi_{\\theta+d\\theta}= \\psi_{\\theta}+\\partial_i\\psi_{\\theta}d\\theta^i+\\frac{1}{2}\\partial_i\\partial_j\\psi_{\\theta}d\\theta^id\\theta^j+\\mathcal{O}(d\\theta^3)\\) だから、 \\[\\Braket{\\psi_\\theta|\\psi_{\\theta+d\\theta}}\\simeq \\Braket{\\psi_\\theta|\\psi_{\\theta}}+\\Braket{\\psi_\\theta|\\partial_i\\psi_{\\theta}}d\\theta^i+\\frac{1}{2}\\Braket{\\psi_\\theta|\\partial_i\\partial_j\\psi_{\\theta}}d\\theta^id\\theta^j\\]\n\\[= 1+\\Braket{\\psi_\\theta|\\partial_i\\psi_{\\theta}}d\\theta^i+\\frac{1}{2}\\Braket{\\psi_\\theta|\\partial_i\\partial_j\\psi_{\\theta}}d\\theta^id\\theta^j\\]\nすると、\\(|\\Braket{\\psi_\\theta|\\psi_{\\theta+d\\theta}}|^2\\) を求めることができる：\n\\[|\\Braket{\\psi_\\theta|\\psi_{\\theta+d\\theta}}|^2\\] \\[\n= 1+\\left(\\Braket{\\psi_\\theta|\\partial_i\\psi_{\\theta}}+\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\right)d\\theta^i+\\left(\\frac{1}{2}\\Braket{\\psi_\\theta|\\partial_i\\partial_j\\psi_{\\theta}}+\\frac{1}{2}\\Braket{\\partial_i\\partial_j\\psi_\\theta|\\psi_{\\theta}}+\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\right)d\\theta^id\\theta^j\n\\]\n\\(\\partial_i\\braket{\\psi_\\theta|\\psi_\\theta}=\\braket{\\partial_i\\psi_\\theta|\\psi_\\theta}+\\braket{\\psi_\\theta|\\partial_i\\psi_\\theta}\\) である一方、\\(\\partial_i\\braket{\\psi_\\theta|\\psi_\\theta}=\\partial_i 1=0\\) であるから、 一次の項は0となる。\n2次の項についても整理してみる。\\(\\partial_j\\partial_i\\braket{\\psi_\\theta|\\psi_\\theta}=\\braket{\\partial_j\\partial_i\\psi_\\theta|\\psi_\\theta}+\\braket{\\psi_\\theta|\\partial_j\\partial_i\\psi_\\theta}+\\braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_\\theta}+\\braket{\\partial_j\\psi_\\theta|\\partial_i\\psi_\\theta}\\) である一方、\\(\\partial_j\\partial_i\\braket{\\psi_\\theta|\\psi_\\theta}=\\partial_j\\partial_i 1=0\\) であるから、\n\\[\n|\\Braket{\\psi_\\theta|\\psi_{\\theta+d\\theta}}|^2\n= 1+\\left(\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}-\\frac{1}{2}\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}-\\frac{1}{2}\\Braket{\\partial_j\\psi_\\theta|\\partial_i\\psi_{\\theta}}\\right)d\\theta^id\\theta^j\n\\]\nと書くことができる。\\(x=1\\) 周りでの \\(\\arccos{}\\) のテイラー展開 \\(\\arccos^2{\\sqrt{x}}\\simeq 1-x^2\\) を使って\n\\[d^2\\left(\\ket{\\psi_\\theta},\\ket{\\psi_{\\theta+d\\theta}}\\right)=\\arccos^2{|\\Braket{\\psi_{\\theta}|\\psi_{\\theta+d\\theta}}|}\\simeq 1-|\\Braket{\\psi_{\\theta}|\\psi_{\\theta+d\\theta}}|^2\\]\n\\[=\\left(\\frac{1}{2}\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}+\\frac{1}{2}\\Braket{\\partial_j\\psi_\\theta|\\partial_i\\psi_{\\theta}}-\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\right)d\\theta^id\\theta^j\\]\nを得る。結局、計量は\n\\[g_{ij}(\\theta)=\\frac{1}{2}\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}+\\frac{1}{2}\\Braket{\\partial_j\\psi_\\theta|\\partial_i\\psi_{\\theta}}-\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\] \\[={\\rm Re}\\left(\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}-\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\right)\\]\nということになる。文献ではこの形で止められていたが、1次の項を落としたときの議論によって\n\\[g_{ij}(\\theta)={\\rm Re}\\left(\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}+\\Braket{\\psi_\\theta|\\partial_i\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\right)\\]\nと書くこともできる。\nStokes et al. (2020) によると、\\(g_{ij}\\) はFubini-Study計量テンソル、実部を取る前のテンソル \\(\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_{\\theta}}-\\Braket{\\partial_i\\psi_\\theta|\\psi_{\\theta}}\\Braket{\\psi_\\theta|\\partial_j\\psi_{\\theta}}\\) はQuantum Geometric Tensorと呼ばれる。\nQuantum Natural Gradientは、この計量を用いて更新式を作ったものである。\n\\(\\theta^i[n+1]=\\theta^i[n]-\\eta g^{ij}\\partial_j \\mathcal{L}|_{\\theta^i=\\theta^i[n]}\\)"
+  },
+  {
+    "objectID": "Phys/notes/Quantum_Natural_Gradient.html#古典情報量との対応",
+    "href": "Phys/notes/Quantum_Natural_Gradient.html#古典情報量との対応",
+    "title": "Quantum Natural Gradient",
+    "section": "古典情報量との対応",
+    "text": "古典情報量との対応\nFubini-Study 計量テンソルの導出をFisher情報行列の導出と比較すると類似点が多いことに気づく。 ここでは、Fubini-Study 計量テンソルからFisher情報行列が導かれることについて論じる。\n状態を \\(\\ket{\\psi_\\theta}=\\sum_x c_\\theta(x)\\ket{x}\\) と展開する。 ここで \\(p_\\theta(x)=c_\\theta(x)^2\\) と対応させる事にする。 両辺微分して\n\\[\\ket{\\partial_i\\psi_\\theta}=\\sum_x \\partial_i\\sqrt{p_\\theta(x)}\\ket{x}=\\frac{1}{2}\\sum_x \\frac{1}{\\sqrt{p_\\theta(x)}}\\partial_ip_\\theta(x)\\ket{x}\\]\nすると \\(\\Braket{\\psi_\\theta|\\partial_i\\psi_\\theta}\\) は以下のようになる： \\[\\Braket{\\psi_\\theta|\\partial_i\\psi_\\theta}=\\frac{1}{2}\\sum_{x,x'} \\frac{\\sqrt{p_\\theta(x')}}{\\sqrt{p_\\theta(x)}}\\partial_ip_\\theta(x)\\Braket{x'|x}=\\frac{1}{2}\\sum_{x} \\partial_ip_\\theta(x)=\\frac{1}{2}\\partial_i\\sum_{x} p_\\theta(x)=0\\]\n一方、\\(\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_\\theta}\\) は\n\\[\\Braket{\\partial_i\\psi_\\theta|\\partial_j\\psi_\\theta}=\\frac{1}{4}\\sum_{x,x'} \\frac{1}{\\sqrt{p_\\theta(x)p_\\theta(x')}}\\Braket{x'|x}\\left(\\partial_i p_\\theta(x)\\right)\\left(\\partial_j p_\\theta(x')\\right)\\]\n\\[=\\frac{1}{4}\\sum_{x} \\frac{1}{p_\\theta(x)}\\left(\\partial_i p_\\theta(x)\\right)\\left(\\partial_j p_\\theta(x)\\right)\\]\n\\[=\\frac{1}{4}\\sum_{x} p_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\partial_j \\ln{p}_\\theta(x)=\\frac{1}{4}\\mathbb{E}_\\theta \\left[\\partial_j \\ln{p}_\\theta(x)\\partial_i \\ln{p}_\\theta(x)\\right]\\]\n以上のように、Fubini-StudyはFisher情報行列には（古典確率分布と量子力学の波動関数の意味で）対応関係がある。"
   },
   {
     "objectID": "Phys/notes/AltlandSimons_instanton.html",
@@ -140,10 +196,31 @@
     "text": "References\n\nCondensed Matter Field Theory, 2nd edition, by Alexander Altland and Ben Simons"
   },
   {
+    "objectID": "Phys/notes/VariationalApprox.html",
+    "href": "Phys/notes/VariationalApprox.html",
+    "title": "変分原理によるハミルトニアンの近似",
+    "section": "",
+    "text": "指数関数は下に凸であるから、Jensenの不等式が成り立つ：\n\\[e^{-\\sum_i p_i x_i}\\leq \\sum_i p_i e^{- x_i}\\]\n証明は Wikipedia (2022) を参照するとよい。"
+  },
+  {
+    "objectID": "Phys/notes/VariationalApprox.html#変分自由エネルギー",
+    "href": "Phys/notes/VariationalApprox.html#変分自由エネルギー",
+    "title": "変分原理によるハミルトニアンの近似",
+    "section": "変分自由エネルギー",
+    "text": "変分自由エネルギー\n物理系の構造はハミルトニアンやラグランジアンといった関数が決定する。 量子系においてはこれらは行列となるが、古典系で関数系が異なることと、 量子系で行列要素の入り方によって物理系の性質が決まることと対応している。\n量子系のハミルトニアンを考える。 エネルギー固有値・固有状態が未知であり、解くのが困難なハミルトニアンを \\(H\\) とする。 \\(H\\) に類似した構造を持ち、\\(H\\) の近似として有効だとされている解きやすいハミルトニアンを \\(H_0\\) とする。それぞれの対角表示を以下で与える：\n\\[H=\\sum_n E_n\\ket{n}\\bra{n}\\] \\[H_0=\\sum_{n_0} E_{n_0}\\ket{n_0}\\bra{n_0}\\]\n系の逆温度を \\(\\beta\\) として、2つの自由エネルギーを定義する。\n\\[F=-\\frac{1}{\\beta}\\ln{\\left[{\\rm Tr}\\left[e^{-\\beta H}\\right]\\right]}\\] \\[F_v\\left[E_{n_0},\\ket{n_0}\\right]=-\\frac{1}{\\beta}\\ln{\\left[{\\rm Tr}\\left[e^{-\\beta\\left(H_0+\\braket{H-H_0}_0\\right)}\\right]\\right]}=-\\frac{1}{\\beta}\\ln{\\left[{\\rm Tr}\\left[e^{-\\beta H_0}\\right]\\right]}+\\braket{H-H_0}_0\\]\nただし、\\(\\braket{\\cdots}_0={\\rm Tr}\\left[\\cdots e^{-\\beta H_0}\\right]\\) を表す。 \\(Z_0={\\rm Tr}\\left[e^{-\\beta H_0}\\right],\\,p_n=e^{-\\beta\\Braket{n_0|H_0|n_0}}/Z_0\\) として、 \\[\ne^{-\\beta\\braket{H-H_0}_0}\n=e^{-\\beta\\sum_{n_0}p_n\\Braket{n_0|H-H_0|n_0}}\n\\] Jensenの不等式から \\[\n\\leq \\sum_{n_0}p_n e^{-\\beta\\Braket{n_0|H-H_0|n_0}}= \\frac{1}{Z_0}\\sum_{n_0} e^{-\\beta\\Braket{n_0|H|n_0}}\n\\]\nつまり \\(e^{-\\beta\\braket{H-H_0}_0}\\leq \\frac{1}{Z_0}\\sum_{n_0} e^{-\\beta\\Braket{n_0|H|n_0}}\\) が成り立つ。\nここで、 \\(\\ket{n_0}=\\sum_m c_{mn}\\ket{n}\\) とする。 すると、要素を \\(c_{mn}\\) にもつ行列はユニタリー行列になる。\n\\(\\Braket{n_0|H|n_0}=\\sum_{mm'}\\Braket{n|c^*_{m'n}H c_{mn}|n}=\\sum_{m}|c_{mn}|^2 E_n\\) が成立し、\\(\\sum_{m}|c_{mn}|^2=1\\) であるから、再びJensenの不等式を用いて、 \\[\\frac{1}{Z_0}\\sum_{n_0} e^{-\\beta\\Braket{n_0|H|n_0}}=\\frac{1}{Z_0}\\sum_{n} e^{-\\beta\\sum_{m}|c_{mn}|^2 E_n}\\leq \\frac{1}{Z_0}\\sum_{n} \\sum_{m}|c_{mn}|^2 e^{-\\beta  E_n}\\]\n\\[=\\frac{1}{Z_0}\\sum_{n} e^{-\\beta  E_n}=\\frac{Z}{Z_0}\\]\n示せた不等式は、結局\n\\[e^{-\\beta\\braket{H-H_0}_0}\\leq\\frac{Z}{Z_0}\\]\nである。両辺の対数をとり、係数を揃えれば\n\\[\\braket{H-H_0}_0\\geq-\\frac{1}{\\beta}\\ln{Z}+\\frac{1}{\\beta}\\ln{Z_0}\\]\nつまり、\n\\[F_v=-\\frac{1}{\\beta}\\ln{Z_0}+\\braket{H-H_0}_0\\geq-\\frac{1}{\\beta}\\ln{Z}=F\\] \\[F_v\\geq F\\]\nがわかる。等号は、例えば \\(H=H_0\\) であれば達成されることが自明にわかる。"
+  },
+  {
+    "objectID": "Phys/notes/VariationalApprox.html#kullback-leibler情報量",
+    "href": "Phys/notes/VariationalApprox.html#kullback-leibler情報量",
+    "title": "変分原理によるハミルトニアンの近似",
+    "section": "Kullback-Leibler情報量",
+    "text": "Kullback-Leibler情報量\n変分原理の不等式から、 \\(F_v- F\\) という量に興味が向くのは自然なことだと考えられる。 これを改めて書き下すと \\[F_v-F=\\frac{1}{\\beta}\\ln{Z}-\\frac{1}{\\beta}\\ln{Z_0}+{\\rm Tr}\\left[\\left(H-H_0\\right) e^{-\\beta H_0}\\right]\\] \\[=\\frac{1}{\\beta}\\left[\\ln{Z}+{\\rm Tr}\\left[\\beta H e^{-\\beta H_0}\\right]-\\ln{Z_0}-{\\rm Tr}\\left[\\beta H_0 e^{-\\beta H_0}\\right]\\right]\\]\n\\[=\\frac{1}{\\beta}\\left[{\\rm Tr}\\left[\\frac{e^{-\\beta H_0}}{Z_0}\\ln{ Z}\\right]+{\\rm Tr}\\left[\\beta H e^{-\\beta H_0}\\right]-{\\rm Tr}\\left[\\frac{e^{-\\beta H_0}}{Z_0}\\ln{Z_0}\\right]-{\\rm Tr}\\left[\\beta H_0 e^{-\\beta H_0}\\right]\\right]\\]\n\\[=\\frac{1}{\\beta}\\left[-{\\rm Tr}\\left[\\frac{e^{-\\beta H_0}}{Z_0}\\ln{\\frac{e^{-\\beta H}}{Z}} \\right]+{\\rm Tr}\\left[\\frac{e^{-\\beta H_0}}{Z_0}\\ln{\\frac{e^{-\\beta H_0}}{Z_0}}\\right]\\right]\\]\nここで、統計演算子を \\(\\rho=\\frac{e^{-\\beta H}}{Z} ,\\,\\sigma=\\frac{e^{-\\beta H_0}}{Z_0}\\) と定義する。すると、\n\\[F_v-F=\\frac{1}{\\beta}\\left[-{\\rm Tr}\\left[\\rho\\ln{\\sigma} \\right]+{\\rm Tr}\\left[\\rho\\ln{\\rho}\\right]\\right]\\]\nこれは古典系ではKullback-Leibler情報量に対応する。実際、オブザーバブル \\(\\mathcal{O}\\) が対角表示であれば \\({\\rm Tr}[\\mathcal{O}]=\\sum_i O_i\\) と関連付けることができて、 Kullback-Leibler情報量を \\(\\mathcal{D}\\left(\\rho||\\sigma\\right)=-\\sum_i \\rho_i\\ln{\\frac{\\sigma_i}{\\rho_i}}\\) で定義すると\n\\[F_v-F\\simeq -\\frac{1}{\\beta}\\sum_i \\rho_i\\ln{\\frac{\\sigma_i}{\\rho_i}}=\\frac{1}{\\beta}\\mathcal{D}\\left(\\rho||\\sigma\\right)\\]\nと書くことができる。量子系の場合は演算子表示のまま\n\\[\\mathcal{D}\\left(\\rho||\\sigma\\right)={\\rm Tr}\\left[\\rho\\ln{\\rho}\\right]-{\\rm Tr}\\left[\\rho\\ln{\\sigma} \\right]\\]\nと定義すればよい。\\(\\rho=\\sigma\\) であればKL情報量は0だから、KL情報量は異なる統計演算子の間のある種の距離を与えると考えられる。KL情報量はカノニカル分布に限らず一般の分布に対して非負であることが示せるが、もちろん、KL情報量は定義が非対称なので距離の公理を満たさない。更には、三角不等式すら満たさない。しかし後で見るように、十分似た確率分布に対するKL情報量は距離とみなすことができる。カノニカル分布に限って言い換えれば、ハミルトニアン \\(H_0\\) が \\(H\\) の良い近似を与えるハミルトニアンであればあるほどKL情報量は小さいから、ハミルトニアンの距離を表すとも言える。"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "I am a senior (B4) in the university majoring in applied physics. For my graduation research, I am conducting an experiment about condensed matter physics.\n\nCurrent Affiliation\nDepartment of Applied Physics, Faculty of Engineering, The University of Tokyo\n\n\nI’m interested in:\n\nQuantum phases in condensed matters\nRandom matrix theory\nEntanglement dynamics\nTopological properties of high-dimentional parameter spaces"
+    "text": "I am a senior (B4) in the university majoring in applied physics. For my graduation research, I am conducting an experiment about condensed matter physics.\n\nCurrent Affiliation\nTokura Lab.\nDept. of Appl. Phys., Faculty of Engineering, The University of Tokyo\n\n\n\n\nNow I’m working on:\n\nWeyl semimetal / topological insulator (experimental research)\nPage curve (theoretical research)\n\n\n\nI’m interested in:\n\nQuantum phases in condensed matters\nRandom matrix theory\nEntanglement dynamics\nTopological properties of high-dimentional parameter spaces"
   }
 ]
