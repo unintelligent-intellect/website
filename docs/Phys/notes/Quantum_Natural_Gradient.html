@@ -261,7 +261,7 @@ d\left(\ket{\psi},\ket{\phi}\right)=\arccos{\left|\Braket{\psi|\phi}\right|}
 <ul>
 <li><span class="math inline">\(d(a,a)=0\)</span>: 自明に成立する。</li>
 <li><span class="math inline">\(d(a,b)=d(b,a)\)</span> : 自明に成立する。</li>
-<li><span class="math inline">\(d(a,b)+d(b,c)\geq d(a,c)\)</span> : 成立する。以下を参照。</li>
+<li><span class="math inline">\(d(a,b)+d(b,c)\geq d(a,c)\)</span> : 3点が十分近ければ成立する<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。以下を参照。</li>
 </ul>
 <p>三角不等式が成立することの略証を示す。 まず、全ての内積は適当なグローバル位相を各々のベクトルに掛けることで実になるようにとることができる。 このようにして得た3つのベクトルは単位超球面上の3点であり、不等式の各項は2点間の角度を表している。 角度は球面上の円弧の長さに対応するので、3辺の長さについて三角不等式が成り立つことから、問題の三角不等式も成り立つ。</p>
 <p>以上からわかるように、三角不等式はふつう等式とならない。 <span class="math inline">\(a=\ket{0},b=\frac{1}{\sqrt{2}}\left(\ket{0}+\ket{1}\right),c=\frac{1}{\sqrt{2}}\left(\ket{0}+i\ket{1}\right)\)</span> とすると全ての元の間の距離が <span class="math inline">\(\arccos{\frac{1}{\sqrt{2}}}=\frac{\pi}{4}\)</span>となるので等号は成立しない。</p>
@@ -325,6 +325,7 @@ d^2\left(\ket{\psi_\theta},\ket{\psi_{\theta+d\theta}}\right)
 </section>
 </section>
 
+
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-amari-naturalgradient" class="csl-entry" role="doc-biblioentry">
 Amari, Shun-ichi. 1998. <span>“<span class="nocase">Natural Gradient Works Efficiently in Learning</span>.”</span> <em>Neural Computation</em> 10 (2): 251–76. <a href="https://doi.org/10.1162/089976698300017746">https://doi.org/10.1162/089976698300017746</a>.
@@ -335,7 +336,12 @@ Izaac, Josh. 2019. <span>“Quantum Natural Gradient.”</span> <em>Pennylane De
 <div id="ref-Stokes2020quantumnatural" class="csl-entry" role="doc-biblioentry">
 Stokes, James, Josh Izaac, Nathan Killoran, and Giuseppe Carleo. 2020. <span>“Quantum <span>N</span>atural <span>G</span>radient.”</span> <em><span>Quantum</span></em> 4 (May): 269. <a href="https://doi.org/10.22331/q-2020-05-25-269">https://doi.org/10.22331/q-2020-05-25-269</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>一般の場合どうなるのかまだ考えてない。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
