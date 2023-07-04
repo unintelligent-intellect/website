@@ -12,17 +12,36 @@ I am a senior (B4) in the university majoring in applied physics. For my graduat
 Faculty of Engineering, 
 The University of Tokyo
 
+### Education
+
+- 2020.4 - 2022.3
+    - College of Arts and Sciences, The University of Tokyo
+- 2022.4 - present
+    - Dept. of Appl. Phys., Faculty of Engineering, The University of Tokyo
+
+---
+
 ### Now I'm working on:
 
 - Weyl semimetal / topological insulator (experimental research)
 - Page curve (theoretical research)
 
-### I'm interested in:
+### I'm interested in
 
-- Quantum phases in condensed matters
-- Random matrix theory
-- Entanglement dynamics
-- Topological properties of high-dimentional parameter spaces
+- what kind of (quantum) information processing (quantum) integrable systems, or quantum chaos, are good at, and whether these features are controllable. Keywords are:
+    - Analytical Mechanics
+    - Quantum Chaos / Quantum Integrable Systems
+    - Random Matrix Theory
+    - Quantum Entanglement
+- complex physical phenomena, especially topological properties, that emerge when units of simple structures are assembled. Keywords are:
+    - Topological Phases
+    - Statistical Mechanics
+    - Quantum Entanglement
+- how the geometrical structure of parameter spaces with huge dimensions affects (quantum) information processing. Keywords are:
+    - Information Geometry
+    - (Quantum) Machine Learning
+
+---
 
 ### Contact
 
