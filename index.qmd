@@ -6,8 +6,8 @@ title: "Home"
 
 - 2023/05/13 Published [simulation exhibit for the "Applied Physics Expo"](https://ap-mayfes-2023.github.io/mayfes2023/simulation/index.html), an exhibition project of the UTokyo May Festival. Thanks to [the coleagues](https://github.com/AP-mayfes-2023) in my group for their contributions!
 - 2023/03/13-15 Participated in [the spring school of the computational physics](https://hohno0223.github.io/comp_phys_spring_school2023/) in Okinawa.
-- 2022/12/01 Published [Qiita article about introduction to quantum chaos](https://qiita.com/unintelligent-intellect/private/8a7087fc407394d10a62)(Japanese) [^comment ].
+- 2022/12/01 Published [Qiita article about introduction to quantum chaos](https://qiita.com/unintelligent-intellect/private/8a7087fc407394d10a62)(Japanese) [^comment].
 - 2022/09/23-30 Participated in [the QEd Summer School](https://www.sqei.c.u-tokyo.ac.jp/qed/) 2022 in Okinawa / gave a presentation of my group's work.
 - 2021/12/09 Completed [the Quantum Software Learning Session](https://qsrh.jp/seminar/) hosted by [QSRH](https://qsrh.jp).
 
-[^comment]This article was written when I first started studying quantum chaos, so if there are any errors, please feel free to comment. I will publish it when it is sufficiently complete to reflect your suggestions.
+[^comment]: This article was written when I first started studying quantum chaos, so if there are any errors, please feel free to comment. I will publish it when it is sufficiently complete to reflect your suggestions.
