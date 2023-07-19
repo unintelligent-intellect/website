@@ -5,6 +5,7 @@ Here I have posted notes and simulations that I have prepared for seminars and e
 
 ## Notes
 
+- [【English】Foundations of Information Geometry](Phys/notes/AppGeom.qmd)
 - [【English】Derivation of the instanton solution by the path integral formalism](Phys/notes/AltlandSimons_instanton.qmd)
 - [【English】Altland & Simons "Condensed Matter Field Theory" Problem Q3[2]](Phys/notes/AltlandSimons_Q3-2.qmd)
 - [【English】Altland & Simons "Condensed Matter Field Theory" Problem Q3[6]](Phys/notes/AltlandSimons_Q3-6.qmd)

@@ -46,7 +46,7 @@ $enable-rounded:            false !default;
 
 // Body
 
-$body-color:                $gray-700 !default;
+$body-color:                $gray-900 !default;
 
 // Fonts
 
@@ -60,6 +60,10 @@ $h5-font-size:                1rem !default;
 $h6-font-size:                .75rem !default;
 $headings-font-weight:        lighter !default;
 $headings-color:              #000000 !default;
+
+// Links
+
+$link-color:                 $blue !default;
 
 // Tables
 
@@ -90,6 +94,7 @@ $navbar-dark-hover-color:           $white !default;
 $navbar-light-color:                rgba($black, .3) !default;
 $navbar-light-hover-color:          $gray-900 !default;
 $navbar-light-active-color:         $gray-900 !default;
+$navbar-fg:                         $gray-400 !default;
 
 // Pagination
 

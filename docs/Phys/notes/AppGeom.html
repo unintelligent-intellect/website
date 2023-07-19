@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.247">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Haruki YAGI - Foundations of Information Geometry</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Haruki YAGI</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Physics.html">
+ <span class="menu-text">Physics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Music.html">
+ <span class="menu-text">Music</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#riemannian-metric" id="toc-riemannian-metric" class="nav-link active" data-scroll-target="#riemannian-metric">Riemannian Metric</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#riemannian-metric-defined-by-a-coordinate-system" id="toc-riemannian-metric-defined-by-a-coordinate-system" class="nav-link" data-scroll-target="#riemannian-metric-defined-by-a-coordinate-system">Riemannian Metric (Defined by a Coordinate System)</a></li>
+  <li><a href="#geodesic-defined-by-a-riemannian-metric" id="toc-geodesic-defined-by-a-riemannian-metric" class="nav-link" data-scroll-target="#geodesic-defined-by-a-riemannian-metric">Geodesic (Defined by a Riemannian Metric)</a></li>
+  </ul></li>
+  <li><a href="#affine-connection" id="toc-affine-connection" class="nav-link" data-scroll-target="#affine-connection">Affine Connection</a>
+  <ul class="collapse">
+  <li><a href="#definition-1" id="toc-definition-1" class="nav-link" data-scroll-target="#definition-1">Definition</a></li>
+  <li><a href="#parallel-transport" id="toc-parallel-transport" class="nav-link" data-scroll-target="#parallel-transport">Parallel Transport</a></li>
+  <li><a href="#coefficients-of-a-connection" id="toc-coefficients-of-a-connection" class="nav-link" data-scroll-target="#coefficients-of-a-connection">Coefficients of a Connection</a></li>
+  <li><a href="#geodesic-defined-by-an-affine-connection" id="toc-geodesic-defined-by-an-affine-connection" class="nav-link" data-scroll-target="#geodesic-defined-by-an-affine-connection">Geodesic (Defined by an Affine Connection)</a></li>
+  <li><a href="#levi-civita-connection" id="toc-levi-civita-connection" class="nav-link" data-scroll-target="#levi-civita-connection">Levi-Civita Connection</a></li>
+  <li><a href="#dual-affine-connection" id="toc-dual-affine-connection" class="nav-link" data-scroll-target="#dual-affine-connection">Dual Affine Connection</a></li>
+  </ul></li>
+  <li><a href="#torsion-and-curvature" id="toc-torsion-and-curvature" class="nav-link" data-scroll-target="#torsion-and-curvature">Torsion and Curvature</a>
+  <ul class="collapse">
+  <li><a href="#torsion" id="toc-torsion" class="nav-link" data-scroll-target="#torsion">Torsion</a></li>
+  <li><a href="#curvature" id="toc-curvature" class="nav-link" data-scroll-target="#curvature">Curvature</a></li>
+  <li><a href="#dual-curvature" id="toc-dual-curvature" class="nav-link" data-scroll-target="#dual-curvature">Dual Curvature</a></li>
+  </ul></li>
+  <li><a href="#bianchi-identities" id="toc-bianchi-identities" class="nav-link" data-scroll-target="#bianchi-identities">Bianchi Identities</a>
+  <ul class="collapse">
+  <li><a href="#st-bianchi-identity" id="toc-st-bianchi-identity" class="nav-link" data-scroll-target="#st-bianchi-identity">1st Bianchi Identity</a></li>
+  <li><a href="#nd-bianchi-identity" id="toc-nd-bianchi-identity" class="nav-link" data-scroll-target="#nd-bianchi-identity">2nd Bianchi Identity</a></li>
+  </ul></li>
+  <li><a href="#nabla-flat" id="toc-nabla-flat" class="nav-link" data-scroll-target="#nabla-flat"><span class="math inline">\(\nabla\)</span>-Flat</a>
+  <ul class="collapse">
+  <li><a href="#definition-2" id="toc-definition-2" class="nav-link" data-scroll-target="#definition-2">Definition</a></li>
+  <li><a href="#nabla-affine-coordinates" id="toc-nabla-affine-coordinates" class="nav-link" data-scroll-target="#nabla-affine-coordinates"><span class="math inline">\(\nabla\)</span>-Affine Coordinates</a></li>
+  <li><a href="#existence-of-local-nabla-affine-coordinates" id="toc-existence-of-local-nabla-affine-coordinates" class="nav-link" data-scroll-target="#existence-of-local-nabla-affine-coordinates">Existence of Local <span class="math inline">\(\nabla\)</span>-Affine Coordinates</a></li>
+  <li><a href="#dual-flat" id="toc-dual-flat" class="nav-link" data-scroll-target="#dual-flat">Dual-Flat</a></li>
+  </ul></li>
+  <li><a href="#dual-affine-coordinates" id="toc-dual-affine-coordinates" class="nav-link" data-scroll-target="#dual-affine-coordinates">Dual Affine Coordinates</a>
+  <ul class="collapse">
+  <li><a href="#definition-3" id="toc-definition-3" class="nav-link" data-scroll-target="#definition-3">Definition</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#potential-functions" id="toc-potential-functions" class="nav-link" data-scroll-target="#potential-functions">Potential Functions</a></li>
+  <li><a href="#nabla-divergence" id="toc-nabla-divergence" class="nav-link" data-scroll-target="#nabla-divergence"><span class="math inline">\(\nabla\)</span>-Divergence</a></li>
+  <li><a href="#generalized-pythagorean-theorem" id="toc-generalized-pythagorean-theorem" class="nav-link" data-scroll-target="#generalized-pythagorean-theorem">Generalized Pythagorean Theorem</a></li>
+  </ul></li>
+  <li><a href="#application-to-information-geometry" id="toc-application-to-information-geometry" class="nav-link" data-scroll-target="#application-to-information-geometry">Application to Information Geometry</a>
+  <ul class="collapse">
+  <li><a href="#fisher-information-metric" id="toc-fisher-information-metric" class="nav-link" data-scroll-target="#fisher-information-metric">Fisher Information Metric</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Foundations of Information Geometry</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This note is a memorandum about the mathematical knowledge necessary for understanding information geometry. The contents of this note might be wrong. If you find any mistakes, please let me know. Almost all of the contents of this note are based on <span class="citation" data-cites="AkioFujiwara2021">Fujiwara (<a href="#ref-AkioFujiwara2021" role="doc-biblioref">2021</a>)</span>.</p>
+<section id="riemannian-metric" class="level1">
+<h1>Riemannian Metric</h1>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. A <strong>Riemannian metric</strong> on <span class="math inline">\(M\)</span> is a smooth map <span class="math inline">\(g: \mathfrak{X}(M) \times \mathfrak{X}(M) \to C^\infty(M)\)</span> satisfying the following properties:</p>
+<ol type="1">
+<li><span class="math inline">\(g(X,Y) = g(Y,X)\)</span> for all <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span>.</li>
+<li><span class="math inline">\(g(X,X) \geq 0\)</span> for all <span class="math inline">\(X \in \mathfrak{X}(M)\)</span>.</li>
+<li><span class="math inline">\(g(X,X) = 0\)</span> if and only if <span class="math inline">\(X = 0\)</span>.</li>
+</ol>
+</section>
+<section id="riemannian-metric-defined-by-a-coordinate-system" class="level2">
+<h2 class="anchored" data-anchor-id="riemannian-metric-defined-by-a-coordinate-system">Riemannian Metric (Defined by a Coordinate System)</h2>
+<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. Let <span class="math inline">\(\{x^i\}\)</span> be a coordinate system on <span class="math inline">\(M\)</span>. The map <span class="math inline">\(g: \mathfrak{X}(M) \times \mathfrak{X}(M) \to C^\infty(M)\)</span> defined by</p>
+<p><span class="math display">\[
+g(X,Y) = \sum_{i,j=1}^n g_{ij}X^iY^j
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span> is a Riemannian metric on <span class="math inline">\(M\)</span> if and only if the matrix <span class="math inline">\((g_{ij})\)</span> is positive definite.</p>
+</section>
+<section id="geodesic-defined-by-a-riemannian-metric" class="level2">
+<h2 class="anchored" data-anchor-id="geodesic-defined-by-a-riemannian-metric">Geodesic (Defined by a Riemannian Metric)</h2>
+<p>Let <span class="math inline">\((M,g)\)</span> be a Riemannian manifold. A smooth curve <span class="math inline">\(\gamma: [a,b] \to M\)</span> is said to be a <strong>geodesic</strong> if <span class="math inline">\(\gamma\)</span> is a critical point of the functional</p>
+<p><span class="math display">\[
+L(\gamma) = \int_a^b \sqrt{g(\gamma',\gamma')}dt
+\]</span></p>
+<p>This functional can be rewritten as</p>
+<p><span class="math display">\[
+L(\gamma) = \int_a^b \sqrt{g_{ij}\frac{dx^i}{dt}\frac{dx^j}{dt}}dt
+\]</span></p>
+<p>The critical point of this functional is a solution to the Euler-Lagrange equation</p>
+<p><span class="math display">\[
+\frac{d^2x^k}{dt^2} + \frac{1}{2}g^{kl}\left(
+    \partial_ig_{jl} + \partial_jg_{il} - \partial_lg_{ij}
+\right)\frac{dx^k}{dt}\frac{dx^l}{dt} = 0
+\]</span></p>
+<p>for all <span class="math inline">\(i \in \{1,\dots,n\}\)</span>.</p>
+</section>
+</section>
+<section id="affine-connection" class="level1">
+<h1>Affine Connection</h1>
+<section id="definition-1" class="level2">
+<h2 class="anchored" data-anchor-id="definition-1">Definition</h2>
+<p>Let <span class="math inline">\(M\)</span> be a smooth manifold. An <strong>affine connection</strong> on <span class="math inline">\(M\)</span> is a map <span class="math inline">\(\nabla: \mathfrak{X}(M) \times \mathfrak{X}(M) \to \mathfrak{X}(M)\)</span> satisfying the following properties:</p>
+<ol type="1">
+<li><span class="math inline">\(\nabla_{fX}Y = f\nabla_XY\)</span> for all <span class="math inline">\(f \in C^\infty(M)\)</span> and <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span>.</li>
+<li><span class="math inline">\(\nabla_X(fY) = f\nabla_XY + (Xf)Y\)</span> for all <span class="math inline">\(f \in C^\infty(M)\)</span> and <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span>.</li>
+<li><span class="math inline">\(\nabla_X(Y+Z) = \nabla_XY + \nabla_XZ\)</span> for all <span class="math inline">\(X,Y,Z \in \mathfrak{X}(M)\)</span>.</li>
+<li><span class="math inline">\(\nabla_X(Y(f)) = (\nabla_XY)(f) + Y(Xf)\)</span> for all <span class="math inline">\(f \in C^\infty(M)\)</span> and <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span>.</li>
+</ol>
+</section>
+<section id="parallel-transport" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-transport">Parallel Transport</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be an affine connection on a smooth manifold <span class="math inline">\(M\)</span>. Let <span class="math inline">\(\gamma: [a,b] \to M\)</span> be a smooth curve. A vector field <span class="math inline">\(V\)</span> along <span class="math inline">\(\gamma\)</span> is said to be <strong>parallel</strong> if <span class="math inline">\(\nabla_{\gamma'}V = 0\)</span>.</p>
+</section>
+<section id="coefficients-of-a-connection" class="level2">
+<h2 class="anchored" data-anchor-id="coefficients-of-a-connection">Coefficients of a Connection</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. For each <span class="math inline">\(i,j,k \in \{1,\dots,n\}\)</span>, there exist unique functions <span class="math inline">\(\Gamma^k_{ij}: M \to \mathbb{R}\)</span> such that</p>
+<p><span class="math display">\[
+\nabla_{\partial_i}\partial_j = \sum_{k=1}^n \Gamma^k_{ij}\partial_k= \Gamma^k_{ij}\partial_k
+\]</span></p>
+<p>The functions <span class="math inline">\(\Gamma^k_{ij}\)</span> are called the <strong>coefficients of the connection</strong> <span class="math inline">\(\nabla\)</span> with respect to the coordinate system <span class="math inline">\(\{x^i\}\)</span>. <span class="math inline">\(\Gamma^k_{ij}\)</span> is called the <strong>Christoffel symbol</strong>. Note that <span class="math inline">\(\Gamma^k_{ij}\)</span> is not a tensor field.</p>
+</section>
+<section id="geodesic-defined-by-an-affine-connection" class="level2">
+<h2 class="anchored" data-anchor-id="geodesic-defined-by-an-affine-connection">Geodesic (Defined by an Affine Connection)</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be an affine connection on a smooth manifold <span class="math inline">\(M\)</span>. A smooth curve <span class="math inline">\(\gamma: [a,b] \to M\)</span> is clearly satisfies the following properties:</p>
+<p><span class="math display">\[
+\nabla_{\gamma'}\gamma' = 0
+\]</span></p>
+<p>This equation can be rewritten as</p>
+<p><span class="math display">\[
+\frac{d^2x^k}{dt^2} + \Gamma^k_{ij}\frac{dx^i}{dt}\frac{dx^j}{dt} = 0
+\]</span></p>
+<p>for all <span class="math inline">\(i \in \{1,\dots,n\}\)</span>.</p>
+</section>
+<section id="levi-civita-connection" class="level2">
+<h2 class="anchored" data-anchor-id="levi-civita-connection">Levi-Civita Connection</h2>
+<p>The geodesic defined by an affine connection does not necessarily correspond to the geodesic defined by a Riemannian metric. However, if we assume that the connection is defined by the following relation</p>
+<p><span class="math display">\[
+\Gamma^k_{ij} = \frac{1}{2}g^{kl}\left(
+    \partial_ig_{jl} + \partial_jg_{il} - \partial_lg_{ij}
+\right)
+\]</span></p>
+<p>for all <span class="math inline">\(i,j,k \in \{1,\dots,n\}\)</span>, then the geodesic defined by the affine connection is the same as the geodesic defined by the Riemannian metric. This connection is called the <strong>Levi-Civita connection</strong> of the Riemannian metric.</p>
+<p>Let <span class="math inline">\((M,g)\)</span> be a Riemannian manifold. Let <span class="math inline">\(\Gamma^k_{ij}\)</span> be the coefficients of the connection <span class="math inline">\(\nabla\)</span> with respect to the coordinate system <span class="math inline">\(\{x^i\}\)</span>. The <strong>Levi-Civita connection</strong> <span class="math inline">\(\nabla\)</span> of <span class="math inline">\(g\)</span> is the unique connection on <span class="math inline">\(M\)</span> such that</p>
+<p><span class="math display">\[
+\Gamma^k_{ij} = \frac{1}{2}g^{kl}\left(
+    \partial_ig_{jl} + \partial_jg_{il} - \partial_lg_{ij}
+\right)
+\]</span></p>
+<p>for all <span class="math inline">\(i,j,k \in \{1,\dots,n\}\)</span>.</p>
+</section>
+<section id="dual-affine-connection" class="level2">
+<h2 class="anchored" data-anchor-id="dual-affine-connection">Dual Affine Connection</h2>
+<p>Let <span class="math inline">\((M,g)\)</span> be a Riemannian manifold. The <strong>dual affine connection</strong> <span class="math inline">\(\nabla^*\)</span> of the connection <span class="math inline">\(\nabla\)</span> is the unique affine connection on <span class="math inline">\(M\)</span> such that</p>
+<p><span class="math display">\[
+Xg(Y,Z) = g(\nabla_XY,Z) + g(Y,\nabla^*_XZ)
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y,Z \in \mathfrak{X}(M)\)</span>. <span class="math inline">\((g,\nabla,\nabla^*)\)</span> is called a <strong>dual structure</strong> on <span class="math inline">\(M\)</span>.</p>
+<p>The dual structure <span class="math inline">\((g,\nabla,\nabla^*)\)</span> satisfies the following properties:</p>
+<p><span class="math display">\[
+\partial_kg_{ij}=\Gamma_{kij}+\Gamma^*_{kji}
+\]</span></p>
+<p>where <span class="math inline">\(\Gamma_{kij}\)</span> and <span class="math inline">\(\Gamma^*_{kji}\)</span> are the coefficients of the connection <span class="math inline">\(\nabla\)</span> and <span class="math inline">\(\nabla^*\)</span> with respect to the coordinate system <span class="math inline">\(\{x^i\}\)</span>.</p>
+</section>
+</section>
+<section id="torsion-and-curvature" class="level1">
+<h1>Torsion and Curvature</h1>
+<section id="torsion" class="level2">
+<h2 class="anchored" data-anchor-id="torsion">Torsion</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. The <strong>torsion</strong> of <span class="math inline">\(\nabla\)</span> is the tensor field <span class="math inline">\(T : \mathfrak{X}(M) \times \mathfrak{X}(M) \to \mathfrak{X}(M)\)</span> defined by</p>
+<p><span class="math display">\[
+T(X,Y) = \nabla_XY - \nabla_YX - [X,Y]
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y \in \mathfrak{X}(M)\)</span>. The connection <span class="math inline">\(\nabla\)</span> is said to be <strong>torsion-free</strong> if <span class="math inline">\(T = 0\)</span>.</p>
+</section>
+<section id="curvature" class="level2">
+<h2 class="anchored" data-anchor-id="curvature">Curvature</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. The <strong>curvature</strong> of <span class="math inline">\(\nabla\)</span> is the tensor field <span class="math inline">\(R : \mathfrak{X}(M) \times \mathfrak{X}(M) \times \mathfrak{X}(M) \to \mathfrak{X}(M)\)</span> defined by</p>
+<p><span class="math display">\[
+R(X,Y)Z = \nabla_X\nabla_YZ - \nabla_Y\nabla_XZ - \nabla_{[X,Y]}Z
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y,Z \in \mathfrak{X}(M)\)</span>.</p>
+</section>
+<section id="dual-curvature" class="level2">
+<h2 class="anchored" data-anchor-id="dual-curvature">Dual Curvature</h2>
+<p>Let <span class="math inline">\((\nabla,\nabla^*)\)</span> be a dual structure on a smooth manifold <span class="math inline">\(M\)</span>. The <strong>dual curvature</strong> of <span class="math inline">\((\nabla,\nabla^*)\)</span> is the tensor field <span class="math inline">\(R^* : \mathfrak{X}(M) \times \mathfrak{X}(M) \times \mathfrak{X}(M) \to \mathfrak{X}(M)\)</span> defined by</p>
+<p><span class="math display">\[
+R^*(X,Y)Z = \nabla^*_X\nabla^*_YZ - \nabla^*_Y\nabla^*_XZ - \nabla^*_{[X,Y]}Z
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y,Z \in \mathfrak{X}(M)\)</span>.</p>
+<p><strong><span class="math inline">\(R=0\)</span> is equivalent to <span class="math inline">\(R^*=0\)</span>, but <span class="math inline">\(T=0\)</span> is not equivalent to <span class="math inline">\(T^*=0\)</span>.</strong></p>
+</section>
+</section>
+<section id="bianchi-identities" class="level1">
+<h1>Bianchi Identities</h1>
+<p>Let <span class="math inline">\(\nabla\)</span> be a Levi-Civita connection on a Riemannian manifold <span class="math inline">\((M,g)\)</span>.</p>
+<section id="st-bianchi-identity" class="level2">
+<h2 class="anchored" data-anchor-id="st-bianchi-identity">1st Bianchi Identity</h2>
+<p>The <strong>1st Bianchi identity</strong> is the identity</p>
+<p><span class="math display">\[
+R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y,Z \in \mathfrak{X}(M)\)</span>.</p>
+</section>
+<section id="nd-bianchi-identity" class="level2">
+<h2 class="anchored" data-anchor-id="nd-bianchi-identity">2nd Bianchi Identity</h2>
+<p>The <strong>2nd Bianchi identity</strong> is the identity</p>
+<p><span class="math display">\[
+\nabla_XR(Y,Z)W + \nabla_YR(Z,X)W + \nabla_ZR(X,Y)W = 0
+\]</span></p>
+<p>for all <span class="math inline">\(X,Y,Z,W \in \mathfrak{X}(M)\)</span>.</p>
+</section>
+</section>
+<section id="nabla-flat" class="level1">
+<h1><span class="math inline">\(\nabla\)</span>-Flat</h1>
+<section id="definition-2" class="level2">
+<h2 class="anchored" data-anchor-id="definition-2">Definition</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. The connection <span class="math inline">\(\nabla\)</span> is said to be <strong>flat</strong> if <span class="math inline">\(R = 0\)</span> and <span class="math inline">\(T = 0\)</span>.</p>
+</section>
+<section id="nabla-affine-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="nabla-affine-coordinates"><span class="math inline">\(\nabla\)</span>-Affine Coordinates</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. A coordinate system <span class="math inline">\(\{x^i\}\)</span> is said to be <strong><span class="math inline">\(\nabla\)</span>-affine</strong> if <span class="math inline">\(\Gamma^k_{ij} = 0\)</span> for all <span class="math inline">\(i,j,k \in \{1,\dots,n\}\)</span>.</p>
+</section>
+<section id="existence-of-local-nabla-affine-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="existence-of-local-nabla-affine-coordinates">Existence of Local <span class="math inline">\(\nabla\)</span>-Affine Coordinates</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. For each <span class="math inline">\(p \in M\)</span>, there exists a neighborhood <span class="math inline">\(U\)</span> of <span class="math inline">\(p\)</span> and a <span class="math inline">\(\nabla\)</span>-affine coordinate system <span class="math inline">\(\{x^i\}\)</span> on <span class="math inline">\(U\)</span>.</p>
+</section>
+<section id="dual-flat" class="level2">
+<h2 class="anchored" data-anchor-id="dual-flat">Dual-Flat</h2>
+<p>Let <span class="math inline">\((g,\nabla,\nabla^*)\)</span> be a dual structure on a smooth manifold <span class="math inline">\(M\)</span>. The dual structure <span class="math inline">\((g,\nabla,\nabla^*)\)</span> is said to be <strong>dual-flat</strong> if <span class="math inline">\(R = R^* = 0\)</span> and <span class="math inline">\(T = T^* = 0\)</span>.</p>
+</section>
+</section>
+<section id="dual-affine-coordinates" class="level1">
+<h1>Dual Affine Coordinates</h1>
+<section id="definition-3" class="level2">
+<h2 class="anchored" data-anchor-id="definition-3">Definition</h2>
+<p>Let <span class="math inline">\(\theta^i\)</span> be a coordinate system for a connection <span class="math inline">\(\nabla\)</span>, <span class="math inline">\(\eta_i\)</span> be a coordinate system for the dual connection <span class="math inline">\(\nabla^*\)</span>. The coordinate system <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> is called the <strong>dual affine coordinate system</strong>.</p>
+<p>If the manifold <span class="math inline">\(M\)</span> is dual-flat with respect to the dual structure <span class="math inline">\((g,\nabla,\nabla^*)\)</span>, then we can choose the local dual affine coordinate system <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> around any point <span class="math inline">\(p \in M\)</span> that the components of the metric <span class="math inline">\(g\)</span> at <span class="math inline">\(p\)</span> satisfy</p>
+<p><span class="math display">\[
+g\left(
+    \frac{\partial}{\partial \theta^i}, \frac{\partial}{\partial \eta_j}
+\right)
+=g(\partial_i,\partial^j)
+=\delta_i^j.
+\]</span></p>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>Let <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> be a dual affine coordinate system. Let <span class="math inline">\(g_{ij}\)</span>, <span class="math inline">\(g^{ij}\)</span> be the components of the metric <span class="math inline">\(g\)</span> with respect to the coordinate system <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span></p>
+<p><span class="math display">\[
+g_{ij} = g\left(\partial_i,\partial_j\right), \quad g^{ij} = g\left(\partial^i,\partial^j\right).
+\]</span></p>
+<p>Then, the following properties hold:</p>
+<p><span class="math display">\[
+g_{ij}=\partial_i\eta_j, \quad g^{ij}=\partial^i\theta^j, \quad g_{ik}g^{kj}=\delta^i_j.
+\]</span></p>
+</section>
+<section id="potential-functions" class="level2">
+<h2 class="anchored" data-anchor-id="potential-functions">Potential Functions</h2>
+<p>There exists a function <span class="math inline">\(\psi(\theta),\,\varphi(\eta)\)</span> on <span class="math inline">\(M\)</span> such that</p>
+<p><span class="math display">\[
+\partial_i\psi(\theta)=\eta_i, \quad \partial^i\varphi(\eta)=\theta^i.
+\]</span></p>
+<p>The functions <span class="math inline">\(\psi(\theta),\,\varphi(\eta)\)</span> are called the <strong>potential functions</strong> of the dual affine coordinate system <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span>.</p>
+<p>The metric <span class="math inline">\(g\)</span> can be expressed as</p>
+<p><span class="math display">\[
+g_{ij}=\partial_i\eta_j=\partial_i\partial_j\psi(\theta), \quad g^{ij}=\partial^i\theta^j=\partial^i\partial^j\varphi(\eta).
+\]</span></p>
+<p>We can choose the potential functions <span class="math inline">\(\psi(\theta),\,\varphi(\eta)\)</span> so that they satisfy the following properties:</p>
+<p><span class="math display">\[
+\psi(\theta)+\varphi(\eta)-\theta^i\eta_i=0
+\]</span></p>
+<p>Let the dual affine coordinate system be <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> at the point <span class="math inline">\(p \in M\)</span>, and let the potential functions be <span class="math inline">\(\psi(\theta),\,\varphi(\eta)\)</span>. Then, the potential functions can be transformed by Legendre transformation as follows:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\psi(\theta)&amp;=\underset{q\in M}{\mathrm{max}}\left(\eta_i(q)\theta^i(p)-\varphi(\eta(q))\right)\\
+\varphi(\eta)&amp;=\underset{q\in M}{\mathrm{max}}\left(\theta^i(q)\eta_i(p)-\psi(\theta(q))\right).
+\end{aligned}
+\]</span></p>
+</section>
+<section id="nabla-divergence" class="level2">
+<h2 class="anchored" data-anchor-id="nabla-divergence"><span class="math inline">\(\nabla\)</span>-Divergence</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. Let <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> be a dual affine coordinate system. The <strong><span class="math inline">\(\nabla\)</span>-divergence</strong> between two points <span class="math inline">\(p,q \in M\)</span> is defined by</p>
+<p><span class="math display">\[
+D(p||q)=\psi(\theta(p))+\varphi(\eta(q))-\theta^i(p)\eta_i(q)
+\]</span></p>
+<p>where <span class="math inline">\(\{(\theta),(\varphi)\}\)</span> is the global dual affine coordinate system.</p>
+<p><span class="math inline">\(\nabla\)</span>-divergence is invariant under the transformation of dual affine coordinate systems.</p>
+</section>
+<section id="generalized-pythagorean-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="generalized-pythagorean-theorem">Generalized Pythagorean Theorem</h2>
+<p>Let <span class="math inline">\(\nabla\)</span> be a connection on a smooth manifold <span class="math inline">\(M\)</span>. Let <span class="math inline">\(\{(\theta^i),(\eta^i)\}\)</span> be a dual affine coordinate system. Let <span class="math inline">\(p,q,r \in M\)</span>. Assume that the <span class="math inline">\(\nabla\)</span>-geodesic <span class="math inline">\(\gamma\)</span> from <span class="math inline">\(p\)</span> to <span class="math inline">\(q\)</span> is perpendicular to the <span class="math inline">\(\nabla^*\)</span>-geodesic <span class="math inline">\(\gamma'\)</span> from <span class="math inline">\(q\)</span> to <span class="math inline">\(r\)</span> for the metric <span class="math inline">\(g\)</span>. Then, the following <strong>generalized Pythagorean theorem</strong> holds:</p>
+<p><span class="math display">\[
+D(p||r)=D(p||q)+D(q||r).
+\]</span></p>
+</section>
+</section>
+<section id="application-to-information-geometry" class="level1">
+<h1>Application to Information Geometry</h1>
+<section id="fisher-information-metric" class="level2">
+<h2 class="anchored" data-anchor-id="fisher-information-metric">Fisher Information Metric</h2>
+<p>Let <span class="math inline">\(p(x;\theta)\)</span> be a probability density function on <span class="math inline">\(\mathbb{R}^n\)</span> concerning the Lebesgue measure. The <strong>Fisher information metric</strong> <span class="math inline">\(g\)</span> is the Riemannian metric on the parameter space <span class="math inline">\(\Theta\)</span> defined by</p>
+<p><span class="math display">\[
+\begin{aligned}
+g_{ij}(\theta) &amp;= \int_{\mathbb{R}^n} p(x;\theta)\left[\frac{\partial}{\partial \theta^i} \log p(x;\theta) \frac{\partial}{\partial \theta^j} \log p(x;\theta)\right] dx\\
+&amp;= \int_{\mathbb{R}^n} \left[\frac{\partial l(x;\theta)}{\partial \theta^i}  \frac{\partial p(x;\theta)}{\partial \theta^j} \right] dx
+\end{aligned}
+\]</span></p>
+<p>for all <span class="math inline">\(\theta \in \Theta\)</span>. Here, <span class="math inline">\(l(x;\theta)=\log p(x;\theta)\)</span> is the score function.</p>
+<p>Here, the following property holds:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\partial_kg_{ij}(\theta)&amp;=\partial_k \int_{\mathbb{R}^n} p(x;\theta)\left[\frac{\partial}{\partial \theta^i} \log p(x;\theta) \frac{\partial}{\partial \theta^j} \log p(x;\theta)\right] dx\\
+&amp;=\int_{\mathbb{R}^n} \left[\frac{\partial^2 l(x;\theta)}{\partial \theta^k \partial \theta^i}  \frac{\partial p(x;\theta)}{\partial \theta^j} + \frac{\partial l(x;\theta)}{\partial \theta^i}  \frac{\partial^2 p(x;\theta)}{\partial \theta^k \partial \theta^j} \right] dx\\
+\end{aligned}
+\]</span></p>
+<p>Dual affine connection is described as <span class="math inline">\(\partial_kg_{ij}=\Gamma_{kij}+\Gamma^*_{kji}\)</span>. Therefore, the dual affine connection is given by</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Gamma_{kij}(\theta)&amp;=\int_{\mathbb{R}^n} \left[\frac{\partial^2 l(x;\theta)}{\partial \theta^k \partial \theta^i}  \frac{\partial p(x;\theta)}{\partial \theta^j} \right] dx\\
+\Gamma^*_{kji}(\theta)&amp;=\int_{\mathbb{R}^n} \left[\frac{\partial l(x;\theta)}{\partial \theta^i}  \frac{\partial^2 p(x;\theta)}{\partial \theta^k \partial \theta^j} \right] dx.\\
+\end{aligned}
+\]</span></p>
+<p>We denote <span class="math inline">\(\Gamma_{kij}(\theta)\)</span> and <span class="math inline">\(\Gamma^*_{kji}(\theta)\)</span> as <span class="math inline">\(\overset{e}{\Gamma}_{kij}\)</span> and <span class="math inline">\(\overset{m}{\Gamma}_{kji}\)</span>, respectively. Furthermore, we call them the <strong>exponential connection(e-connection)</strong> and the <strong>mixture connection(m-connection)</strong>, respectively.</p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-AkioFujiwara2021" class="csl-entry" role="doc-biblioentry">
+Fujiwara, Akio. 2021. <span>“Foundations of Information Geometry.”</span> <em>Kyoritsu Shuppan</em>. <a href="https://www.kyoritsu-pub.co.jp/book/b10003331.html">https://www.kyoritsu-pub.co.jp/book/b10003331.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
