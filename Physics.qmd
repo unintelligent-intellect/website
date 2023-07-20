@@ -13,7 +13,7 @@ Here I have posted notes and simulations that I have prepared for seminars and e
 - [【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ](Phys/notes/JordanWigner.qmd)
 - [【日本語】Quantum Natural Gradient](Phys/notes/Quantum_Natural_Gradient.qmd)
 - [【日本語】変分原理によるハミルトニアンの近似](Phys/notes/VariationalApprox.qmd)
-
+- [【日本語】ラプラス変換表と楽な思い出し方](Phys/notes/LaplaceTransform.qmd)
 
 ## Simulations
 

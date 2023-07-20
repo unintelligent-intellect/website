@@ -18,7 +18,7 @@
     "href": "Physics.html#notes",
     "title": "Physics",
     "section": "Notes",
-    "text": "Notes\n\n【English】Foundations of Information Geometry\n【English】Derivation of the instanton solution by the path integral formalism\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[2]\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[6]\n【日本語】アシュクロフト・マーミン「固体物理の基礎」2章\n【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ\n【日本語】Quantum Natural Gradient\n【日本語】変分原理によるハミルトニアンの近似"
+    "text": "Notes\n\n【English】Foundations of Information Geometry\n【English】Derivation of the instanton solution by the path integral formalism\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[2]\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[6]\n【日本語】アシュクロフト・マーミン「固体物理の基礎」2章\n【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ\n【日本語】Quantum Natural Gradient\n【日本語】変分原理によるハミルトニアンの近似\n【日本語】ラプラス変換表と楽な思い出し方"
   },
   {
     "objectID": "Physics.html#simulations",
@@ -117,6 +117,34 @@
     "title": "Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ",
     "section": "SYK模型の場合",
     "text": "SYK模型の場合\n以上を踏まえてSYK模型を書き直す。Jordan-Wigner変換に伴う複素指数因子はパウリ行列と可換であるから \\(\\chi_{2l}=\\frac{e^{i\\pi\\sum_{j<l}n_j}}{\\sqrt{2}}\\sigma_l^x=\\sigma_l^x\\frac{e^{i\\pi\\sum_{j<l}n_j}}{\\sqrt{2}}\\) となることなどを使うと\n\\[\n    \\mathcal{H}=\\sum_{i<j<k<l}J_{ijkl}\\chi_i\\chi_j\\chi_k\\chi_l\n\\]\n\\[\n    =\\frac{1}{4}\\sum_{i<j<k<l}J_{ijkl}\\sigma_i\\sigma_j\\sigma_k\\sigma_le^{i\\pi\\sum_{m=i\\to j-1,\\,k \\to l-1}n_m }\n\\]\n\\[\n    =\\frac{1}{4}\\sum_{i<j<k<l}J_{ijkl}\\left(\\sigma_i\\sigma_j\\sigma_k\\sigma_l\\cdot \\prod_{m=i\\to j-1,\\,k \\to l-1}\\otimes\\left(-\\sigma^z_m\\right)\\right)\n\\]\nここで \\(\\sigma_i\\) はiが偶数なら \\(\\sigma^x_{i/2}\\) 、奇数なら \\(\\sigma^y_{(i-1)/2}\\) を指すものとする。テンソル積記号については、 \\(\\sigma_{2i}\\sigma_{2i+1}\\sigma_{k}\\sigma_{l}\\quad (k\\neq l,\\, k\\neq l+1)\\) といった項が現れた場合は、最初2項は単なる行列積、残り2項はテンソル積で計算するとした。\n\nWignerの半円則の確認\nランダム行列の特定のユニバーサリティクラスでは、固有値の分布が半円状に分布するWignerの半円則に従うことが知られている。上記の実装法を用いて確認すると以下のような半円状の固有値分布が得られることが確かめられる(マヨラナフェルミオン18個の場合)。\n\n\n\nSYK模型の固有値分布。\\(N_\\mathrm{Majorana}=18\\) の場合。"
+  },
+  {
+    "objectID": "Phys/notes/LaplaceTransform.html",
+    "href": "Phys/notes/LaplaceTransform.html",
+    "title": "ラプラス変換表と楽な思い出し方",
+    "section": "",
+    "text": "\\(f(t)\\)\n\\(F(s)\\)\n\n\n\n\n\\(e^{at}\\)\n\\(\\frac{1}{s-a}\\)\n\n\n\\(t^n\\)\n\\(\\frac{n!}{s^{n+1}}\\)\n\n\n\\(\\cosh at\\)\n\\(\\frac{s}{s^2 - a^2}\\)\n\n\n\\(\\sinh at\\)\n\\(\\frac{a}{s^2 - a^2}\\)\n\n\n\\(\\cos at\\)\n\\(\\frac{s}{s^2 + a^2}\\)\n\n\n\\(\\sin at\\)\n\\(\\frac{a}{s^2 + a^2}\\)\n\n\n\\(t^n e^{at}\\)\n\\(\\frac{n!}{(s-a)^{n+1}}\\)\n\n\n\\(t^n \\cosh at\\)\n\\(\\frac{n!}{2}\\left(\\frac{(s+a)^{n+1} + (s-a)^{n+1}}{(s^2 - a^2)^{n+1}}\\right)\\)\n\n\n\\(t^n \\sinh at\\)\n\\(\\frac{n!}{2}\\left(\\frac{(s+a)^{n+1} - (s-a)^{n+1}}{(s^2 - a^2)^{n+1}}\\right)\\)\n\n\n\\(t^n \\cos at\\)\n\\(\\frac{n!}{2}\\left(\\frac{(s+ia)^{n+1} + (s-ia)^{n+1}}{(s^2 + a^2)^{n+1}}\\right)\\)\n\n\n\\(t^n \\sin at\\)\n\\(\\frac{n!}{2i}\\left(\\frac{(s+ia)^{n+1} - (s-ia)^{n+1}}{(s^2 + a^2)^{n+1}}\\right)\\)\n\n\n\\(e^{at} \\cosh bt\\)\n\\(\\frac{s - a}{(s - a)^2 - b^2}\\)\n\n\n\\(e^{at} \\sinh bt\\)\n\\(\\frac{b}{(s - a)^2 - b^2}\\)\n\n\n\\(e^{at} \\cos bt\\)\n\\(\\frac{s - a}{(s - a)^2 + b^2}\\)\n\n\n\\(e^{at} \\sin bt\\)\n\\(\\frac{b}{(s - a)^2 + b^2}\\)"
+  },
+  {
+    "objectID": "Phys/notes/LaplaceTransform.html#step-1",
+    "href": "Phys/notes/LaplaceTransform.html#step-1",
+    "title": "ラプラス変換表と楽な思い出し方",
+    "section": "Step 1",
+    "text": "Step 1\n\n指数関数のラプラス変換\nこれはとても簡単なので説明する必要もないです。\n\\[\n\\begin{aligned}\n\\mathcal{L}[e^{at}](s) &= \\int_0^\\infty e^{at} e^{-st} dt \\\\\n&= \\int_0^\\infty e^{-(s-a)t} dt \\\\\n&= \\left[ \\frac{e^{-(s-a)t}}{-(s-a)} \\right]_0^\\infty \\\\\n&= \\frac{1}{s-a}\n\\end{aligned}\n\\]\n\n\n冪乗のラプラス変換\n冪乗のラプラス変換を思い出します。これはガンマ関数の定義から自明です。ガンマ関数は\n\\[\n\\Gamma(t) = \\int_0^\\infty x^{t-1} e^{-x} dx\n\\]\nで定義される関数です。ガンマ関数は、\\(t\\) が整数のときには階乗と1だけずれた関数に一致することが知られています：\n\\[\n\\Gamma(n) = (n-1)!\n\\]\nガンマ関数の定義より、冪乗のラプラス変換が導けます。\n\\[\n\\begin{aligned}\n\\mathcal{L}[t^n](s) &= \\int_0^\\infty t^n e^{-st} dt \\\\\n&= \\int_0^\\infty \\frac{1}{s} \\left( \\frac{t}{s} \\right)^n e^{-st} dt \\\\\n&= \\frac{1}{s} \\int_0^\\infty x^n e^{-x} dx \\\\\n&= \\frac{n!}{s^{n+1}}\n\\end{aligned}\n\\]\n実はこの式を思い出すのが一番大変で、あとは楽です。"
+  },
+  {
+    "objectID": "Phys/notes/LaplaceTransform.html#step-2",
+    "href": "Phys/notes/LaplaceTransform.html#step-2",
+    "title": "ラプラス変換表と楽な思い出し方",
+    "section": "Step 2",
+    "text": "Step 2\n指数関数、冪乗の和で書ける関数のラプラス変換表を構成します。 ラプラス変換を行う演算子 \\(\\mathcal{L}\\) は線形演算子であることを使います。\n\n双曲線関数のラプラス変換\n双曲線関数は指数関数の和で表せるので、指数関数のラプラス変換を使ってラプラス変換表を構成できます。\n\\[\n\\begin{aligned}\n\\mathcal{L}[\\cosh at](s) &= \\frac{1}{2} \\mathcal{L}[e^{at} + e^{-at}](s) \\\\\n&= \\frac{1}{2} \\left( \\frac{1}{s-a} + \\frac{1}{s+a} \\right) \\\\\n&= \\frac{s}{s^2 - a^2}\\\\\n\\mathcal{L}[\\sinh at](s) &= \\frac{1}{2} \\mathcal{L}[e^{at} - e^{-at}](s) \\\\\n&= \\frac{1}{2} \\left( \\frac{1}{s-a} - \\frac{1}{s+a} \\right) \\\\\n&= \\frac{a}{s^2 - a^2}\n\\end{aligned}\n\\]\n\n\n三角関数のラプラス変換\n複素指数関数に拡張することで、三角関数のラプラス変換を構成できます。\n\\[\n\\begin{aligned}\n\\mathcal{L}[\\cos at](s) &= \\frac{1}{2} \\mathcal{L}[e^{iat} + e^{-iat}](s) \\\\\n&= \\frac{1}{2} \\left( \\frac{1}{s-ia} + \\frac{1}{s+ia} \\right) \\\\\n&= \\frac{s}{s^2 + a^2}\\\\\n\\mathcal{L}[\\sin at](s) &= \\frac{1}{2i} \\mathcal{L}[e^{iat} - e^{-iat}](s) \\\\\n&= \\frac{1}{2i} \\left( \\frac{1}{s-ia} - \\frac{1}{s+ia} \\right) \\\\\n&= \\frac{a}{s^2 + a^2}\n\\end{aligned}\n\\]\nどちらも結果が(\\(s\\in\\mathbb{R}\\) としたとき)実数になること、および元の関数と偶奇が入れ替わることを覚えておくと良いと思います。"
+  },
+  {
+    "objectID": "Phys/notes/LaplaceTransform.html#step-3",
+    "href": "Phys/notes/LaplaceTransform.html#step-3",
+    "title": "ラプラス変換表と楽な思い出し方",
+    "section": "Step 3",
+    "text": "Step 3\nここでは、指数関数、冪乗の和と積で書ける関数のラプラス変換表を構成します。 重要なテクニックは積分範囲をずらすことで知っているラプラス変換表を使えるようにすることです。\n\n指数関数と冪乗の積のラプラス変換\n\\[\n\\begin{aligned}\n\\mathcal{L}[t^n e^{at}](s) &= \\mathcal{L}[t^n](s-a) \\\\\n&= \\frac{n!}{(s-a)^{n+1}}\n\\end{aligned}\n\\]\n\n\n双曲線関数と冪乗の積のラプラス変換\n\\[\n\\begin{aligned}\n\\mathcal{L}[t^n \\cosh at](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[t^n e^{at}](s) + \\mathcal{L}[t^n e^{-at}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{n!}{(s-a)^{n+1}} + \\frac{n!}{(s+a)^{n+1}}\\right) \\\\\n&= \\frac{n!}{2}\\left(\\frac{(s+a)^{n+1} + (s-a)^{n+1}}{(s^2 - a^2)^{n+1}}\\right) \\\\\n\\mathcal{L}[t^n \\sinh at](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[t^n e^{at}](s) - \\mathcal{L}[t^n e^{-at}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{n!}{(s-a)^{n+1}} - \\frac{n!}{(s+a)^{n+1}}\\right) \\\\\n&= \\frac{n!}{2}\\left(\\frac{(s+a)^{n+1} - (s-a)^{n+1}}{(s^2 - a^2)^{n+1}}\\right)\n\\end{aligned}\n\\]\n\n\n三角関数と冪乗の積のラプラス変換\n\\[\n\\begin{aligned}\n\\mathcal{L}[t^n \\cos at](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[t^n e^{iat}](s) + \\mathcal{L}[t^n e^{-iat}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{n!}{(s-ia)^{n+1}} + \\frac{n!}{(s+ia)^{n+1}}\\right) \\\\\n&= \\frac{n!}{2}\\left(\\frac{(s+ia)^{n+1} + (s-ia)^{n+1}}{(s^2 + a^2)^{n+1}}\\right) \\\\\n\\mathcal{L}[t^n \\sin at](s) &= \\frac{1}{2i}\\left(\\mathcal{L}\n[t^n e^{iat}](s) - \\mathcal{L}[t^n e^{-iat}](s)\\right) \\\\\n&= \\frac{1}{2i}\\left(\\frac{n!}{(s-ia)^{n+1}} - \\frac{n!}{(s+ia)^{n+1}}\\right) \\\\\n&= \\frac{n!}{2i}\\left(\\frac{(s+ia)^{n+1} - (s-ia)^{n+1}}{(s^2 + a^2)^{n+1}}\\right)\n\\end{aligned}\n\\]\n\n\n指数関数と双曲線関数の積のラプラス変換\n\\[\n\\begin{aligned}\n\\mathcal{L}[e^{at} \\cosh bt](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[e^{at + bt}](s) + \\mathcal{L}[e^{at - bt}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{1}{s - (a + b)} + \\frac{1}{s - (a - b)}\\right) \\\\\n&= \\frac{s - a}{(s - a)^2 - b^2} \\\\\n\\mathcal{L}[e^{at} \\sinh bt](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[e^{at + bt}](s) - \\mathcal{L}[e^{at - bt}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{1}{s - (a + b)} - \\frac{1}{s - (a - b)}\\right) \\\\\n&= \\frac{b}{(s - a)^2 - b^2}\n\\end{aligned}\n\\]\n\n\n指数関数と三角関数の積のラプラス変換\n\\[\n\\begin{aligned}\n\\mathcal{L}[e^{at} \\cos bt](s) &= \\frac{1}{2}\\left(\\mathcal{L}\n[e^{at + ibt}](s) + \\mathcal{L}[e^{at - ibt}](s)\\right) \\\\\n&= \\frac{1}{2}\\left(\\frac{1}{s - (a + ib)} + \\frac{1}{s - (a - ib)}\\right) \\\\\n&= \\frac{s - a}{(s - a)^2 + b^2} \\\\\n\\mathcal{L}[e^{at} \\sin bt](s) &= \\frac{1}{2i}\\left(\\mathcal{L}\n[e^{at + ibt}](s) - \\mathcal{L}[e^{at - ibt}](s)\\right) \\\\\n&= \\frac{1}{2i}\\left(\\frac{1}{s - (a + ib)} - \\frac{1}{s - (a - ib)}\\right) \\\\\n&= \\frac{b}{(s - a)^2 + b^2}\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "Phys/notes/AltlandSimons_Q3-6.html",
@@ -221,7 +249,7 @@
     "href": "Phys/notes/AppGeom.html#geodesic-defined-by-a-riemannian-metric",
     "title": "Foundations of Information Geometry",
     "section": "Geodesic (Defined by a Riemannian Metric)",
-    "text": "Geodesic (Defined by a Riemannian Metric)\nLet \\((M,g)\\) be a Riemannian manifold. A smooth curve \\(\\gamma: [a,b] \\to M\\) is said to be a geodesic if \\(\\gamma\\) is a critical point of the functional\n\\[\nL(\\gamma) = \\int_a^b \\sqrt{g(\\gamma',\\gamma')}dt\n\\]\nThis functional can be rewritten as\n\\[\nL(\\gamma) = \\int_a^b \\sqrt{g_{ij}\\frac{dx^i}{dt}\\frac{dx^j}{dt}}dt\n\\]\nThe critical point of this functional is a solution to the Euler-Lagrange equation\n\\[\n\\frac{d^2x^k}{dt^2} + \\frac{1}{2}g^{kl}\\left(\n    \\partial_ig_{jl} + \\partial_jg_{il} - \\partial_lg_{ij}\n\\right)\\frac{dx^k}{dt}\\frac{dx^l}{dt} = 0\n\\]\nfor all \\(i \\in \\{1,\\dots,n\\}\\)."
+    "text": "Geodesic (Defined by a Riemannian Metric)\nLet \\((M,g)\\) be a Riemannian manifold. A smooth curve \\(\\gamma: [a,b] \\to M\\) is said to be a geodesic if \\(\\gamma\\) is a critical point of the functional\n\\[\nL(\\gamma) = \\int_a^b \\sqrt{g(\\gamma',\\gamma')}dt\n\\]\nThis functional can be rewritten as\n\\[\nL(\\gamma) = \\int_a^b \\sqrt{g_{ij}\\frac{dx^i}{dt}\\frac{dx^j}{dt}}dt\n\\]\nThe critical point of this functional is a solution to the Euler-Lagrange equation\n\\[\n\\frac{d^2x^k}{dt^2} + \\frac{1}{2}g^{kl}\\left(\n    \\partial_ig_{jl} + \\partial_jg_{il} - \\partial_lg_{ij}\n\\right)\\frac{dx^i}{dt}\\frac{dx^j}{dt} = 0\n\\]\nfor all \\(i \\in \\{1,\\dots,n\\}\\)."
   },
   {
     "objectID": "Phys/notes/AppGeom.html#definition-1",

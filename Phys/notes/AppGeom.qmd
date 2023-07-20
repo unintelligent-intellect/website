@@ -44,7 +44,7 @@ The critical point of this functional is a solution to the Euler-Lagrange equati
 $$
 \frac{d^2x^k}{dt^2} + \frac{1}{2}g^{kl}\left(
     \partial_ig_{jl} + \partial_jg_{il} - \partial_lg_{ij}
-\right)\frac{dx^k}{dt}\frac{dx^l}{dt} = 0
+\right)\frac{dx^i}{dt}\frac{dx^j}{dt} = 0
 $$
 
 for all $i \in \{1,\dots,n\}$.
