@@ -467,7 +467,8 @@ F(s) = \int_0^\infty f(t) e^{-st} dt
 \begin{aligned}
 \mathcal{L}[\cosh at \cosh bt](s) &amp;= \frac{1}{2}\left(\mathcal{L}[e^{at}\cosh bt](s) + \mathcal{L}[e^{-at}\cosh bt](s)\right) \\
 &amp;= \frac{1}{2}\left(\frac{s - a}{(s - a)^2 - b^2} + \frac{s + a}{(s + a)^2 - b^2}\right) \\
-&amp;= \frac{s^2 + a^2 - b^2}{(s^2 - a^2)^2 - 4a^2b^2} \\
+&amp;= \frac{s(s^2-a^2-b^2)}{(s^2-a^2-b^2)^2} \\
+&amp;= \frac{s}{s^2-a^2-b^2}
 \end{aligned}
 \]</span></p>
 <p>つまり、<strong>覚えるべきは冪乗のラプラス変換 <span class="math inline">\(=\)</span> ガンマ関数だけ</strong>で、あとは指数関数のラプラス変換を使って色々な関数のラプラス変換を構成できます。ラプラス変換表を覚える必要はありません。</p>

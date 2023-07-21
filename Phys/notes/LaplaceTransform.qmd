@@ -228,7 +228,8 @@ $$
 \begin{aligned}
 \mathcal{L}[\cosh at \cosh bt](s) &= \frac{1}{2}\left(\mathcal{L}[e^{at}\cosh bt](s) + \mathcal{L}[e^{-at}\cosh bt](s)\right) \\
 &= \frac{1}{2}\left(\frac{s - a}{(s - a)^2 - b^2} + \frac{s + a}{(s + a)^2 - b^2}\right) \\
-&= \frac{s^2 + a^2 - b^2}{(s^2 - a^2)^2 - 4a^2b^2} \\
+&= \frac{s(s^2-a^2-b^2)}{(s^2-a^2-b^2)^2} \\
+&= \frac{s}{s^2-a^2-b^2}
 \end{aligned}
 $$
 
