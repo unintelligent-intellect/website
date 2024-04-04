@@ -4,9 +4,10 @@ title: "Music"
 
 ## Compositions
 
-* Let's wrap up the year 2023
+- Let's wrap up the year 2023
+    - [Let's wrap up the year 2023](https://youtu.be/359SoUZQNDU?si=NCFIg566GP6nKAbn)
+    - [Graduation march (arr. of Let's wrap up the year 2023)](https://youtu.be/M8Hq1vgepPc?si=8MWObksxD50wtimO)
 
-{{< video https://youtu.be/359SoUZQNDU?si=NCFIg566GP6nKAbn >}}
 
 ## Miscellaneous Writings
 

@@ -2,48 +2,32 @@
 title: "About me"
 ---
 
-I am a senior (B4) in the university majoring in applied physics. For my graduation research, I am conducting an experiment about condensed matter physics.
+- I am a M1 student majoring condensed matter physics and quantum information. 
+- I [compose music](Music.qmd) for pleasure.
 
 ### Current Affiliation
 
-[Tokura Lab.](http://www.cmr.t.u-tokyo.ac.jp)
+- [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/)
 
-[Dept. of Appl. Phys.](https://www.ap.t.u-tokyo.ac.jp), 
-Faculty of Engineering, 
-The University of Tokyo
+- [Dept. of Appl. Phys.](https://www.ap.t.u-tokyo.ac.jp), Faculty of Engineering, The University of Tokyo
 
 ### Education
 
 - 2020.4 - 2022.3
     - College of Arts and Sciences, The University of Tokyo
-- 2022.4 - present
-    - Dept. of Appl. Phys., Faculty of Engineering, The University of Tokyo
+- 2022.4 - 2024.3
+    - Dept. of Appl. Phys., School of Engineering, The University of Tokyo
+- 2024.4 - present
+    - Dept. of Appl. Phys., Graduate School of Engineering, The University of Tokyo
 
 ---
 
-### Now I'm working on:
+### Now I'm working on/interested in/learning:
 
-- Topological semimetal / topological insulator (experimental research)
-- Page curve (theoretical research)
-
-### I'm interested in
-
-- what kind of (quantum) information processing (quantum) integrable systems, or quantum chaos, are good at, and whether these features are controllable. Keywords are:
-    - Analytical Mechanics
-    - Quantum Chaos / Quantum Integrable Systems
-    - Random Matrix Theory
-    - Quantum Entanglement
-- complex physical phenomena, especially topological properties, that emerge when units of simple structures are assembled. Keywords are:
-    - Topological Phases
-    - Statistical Mechanics
-    - Quantum Entanglement
-    - Topological Quantum Field Theory
-- how the geometrical structure of parameter spaces with huge dimensions affects (quantum) information processing. Keywords are:
-    - Information Geometry
-    - (Quantum) Machine Learning
+- quantum many-body entanglement
 
 ---
 
 ### Contact
 
-Feel free to send me an email: haruyagi.contact $\alpha \tau$ gmail.com
+Please use this email adress (replace $\alpha \tau$ with "＠"): haruyagi.contact $\alpha \tau$ gmail.com

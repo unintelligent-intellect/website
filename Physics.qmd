@@ -1,22 +1,5 @@
 ---
 title: "Physics"
 ---
-Here I have posted notes and simulations that I have prepared for seminars and events. Please include a link when citing them.
 
-## Notes
-
-- [【English】Foundations of Information Geometry](Phys/notes/AppGeom.qmd)
-- [【English】Derivation of the instanton solution by the path integral formalism](Phys/notes/AltlandSimons_instanton.qmd)
-- [【English】Altland & Simons "Condensed Matter Field Theory" Problem Q3[2]](Phys/notes/AltlandSimons_Q3-2.qmd)
-- [【English】Altland & Simons "Condensed Matter Field Theory" Problem Q3[6]](Phys/notes/AltlandSimons_Q3-6.qmd)
-- [【日本語】アシュクロフト・マーミン「固体物理の基礎」2章](Phys/notes/AshcroftMerminC2.qmd)
-- [【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ](Phys/notes/JordanWigner.qmd)
-- [【日本語】Quantum Natural Gradient](Phys/notes/Quantum_Natural_Gradient.qmd)
-- [【日本語】変分原理によるハミルトニアンの近似](Phys/notes/VariationalApprox.qmd)
-- [【日本語】ラプラス変換表と楽な思い出し方](Phys/notes/LaplaceTransform.qmd)
-
-## Simulations
-
-You can enjoy simulations of famous physics systems on [this site](https://unintelligent-intellect.github.io/p5js_sims/).
-
-<iframe src="https://unintelligent-intellect.github.io/p5js_sims/" width="100%" height="500px"></iframe>
+This page is under construction.

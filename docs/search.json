@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "I am a senior (B4) in the university majoring in applied physics. For my graduation research, I am conducting an experiment about condensed matter physics.\n\nCurrent Affiliation\nTokura Lab.\nDept. of Appl. Phys., Faculty of Engineering, The University of Tokyo\n\n\nEducation\n\n2020.4 - 2022.3\n\nCollege of Arts and Sciences, The University of Tokyo\n\n2022.4 - present\n\nDept. of Appl. Phys., Faculty of Engineering, The University of Tokyo\n\n\n\n\n\nNow I’m working on:\n\nTopological semimetal / topological insulator (experimental research)\nPage curve (theoretical research)\n\n\n\nI’m interested in\n\nwhat kind of (quantum) information processing (quantum) integrable systems, or quantum chaos, are good at, and whether these features are controllable. Keywords are:\n\nAnalytical Mechanics\nQuantum Chaos / Quantum Integrable Systems\nRandom Matrix Theory\nQuantum Entanglement\n\ncomplex physical phenomena, especially topological properties, that emerge when units of simple structures are assembled. Keywords are:\n\nTopological Phases\nStatistical Mechanics\nQuantum Entanglement\nTopological Quantum Field Theory\n\nhow the geometrical structure of parameter spaces with huge dimensions affects (quantum) information processing. Keywords are:\n\nInformation Geometry\n(Quantum) Machine Learning\n\n\n\n\n\nContact\nFeel free to send me an email: haruyagi.contact \\(\\alpha \\tau\\) gmail.com"
+    "text": "I am a M1 student majoring condensed matter physics and quantum information.\nI compose music for pleasure.\n\n\nCurrent Affiliation\n\nGong group\nDept. of Appl. Phys., Faculty of Engineering, The University of Tokyo\n\n\n\nEducation\n\n2020.4 - 2022.3\n\nCollege of Arts and Sciences, The University of Tokyo\n\n2022.4 - 2024.3\n\nDept. of Appl. Phys., School of Engineering, The University of Tokyo\n\n2024.4 - present\n\nDept. of Appl. Phys., Graduate School of Engineering, The University of Tokyo\n\n\n\n\n\nNow I’m working on/interested in/learning:\n\nquantum many-body entanglement\n\n\n\n\nContact\nPlease use this email adress (replace \\(\\alpha \\tau\\) with “＠”): haruyagi.contact \\(\\alpha \\tau\\) gmail.com"
   },
   {
     "objectID": "Phys/notes/AppGeom.html",
@@ -235,35 +235,28 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "2023/05/13 Published simulation exhibit for the “Applied Physics Expo”, an exhibition project of the UTokyo May Festival. Thanks to the coleagues in my group for their contributions!\n2023/03/13-15 Participated in the spring school of the computational physics in Okinawa.\n2022/12/01 Published Qiita article about introduction to quantum chaos(Japanese) 1.\n2022/09/23-30 Participated in the QEd Summer School 2022 in Okinawa / gave a presentation of my group’s work.\n2021/12/09 Completed the Quantum Software Learning Session hosted by QSRH."
+    "text": "2024/04/01 Entered Gong group, dept. of appl. phys., graduate school of eng., the Univ. of Tokyo\n2024/03/31 Transferred from Tokura lab.\n2024/03/22 Graduated from dept. of appl. phys., school of eng., the Univ. of Tokyo\n2024/03/25 Participated in an internship at Akari Inc."
   },
   {
     "objectID": "index.html#recent-activities",
     "href": "index.html#recent-activities",
     "title": "Home",
     "section": "",
-    "text": "2023/05/13 Published simulation exhibit for the “Applied Physics Expo”, an exhibition project of the UTokyo May Festival. Thanks to the coleagues in my group for their contributions!\n2023/03/13-15 Participated in the spring school of the computational physics in Okinawa.\n2022/12/01 Published Qiita article about introduction to quantum chaos(Japanese) 1.\n2022/09/23-30 Participated in the QEd Summer School 2022 in Okinawa / gave a presentation of my group’s work.\n2021/12/09 Completed the Quantum Software Learning Session hosted by QSRH."
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "Home",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis article was written when I first started studying quantum chaos, so if there are any errors, please feel free to comment. I will publish it when it is sufficiently complete to reflect your suggestions.↩︎"
+    "text": "2024/04/01 Entered Gong group, dept. of appl. phys., graduate school of eng., the Univ. of Tokyo\n2024/03/31 Transferred from Tokura lab.\n2024/03/22 Graduated from dept. of appl. phys., school of eng., the Univ. of Tokyo\n2024/03/25 Participated in an internship at Akari Inc."
   },
   {
     "objectID": "Music.html",
     "href": "Music.html",
     "title": "Music",
     "section": "",
-    "text": "Let’s wrap up the year 2023"
+    "text": "Let’s wrap up the year 2023\n\nLet’s wrap up the year 2023\nGraduation march (arr. of Let’s wrap up the year 2023)"
   },
   {
     "objectID": "Music.html#compositions",
     "href": "Music.html#compositions",
     "title": "Music",
     "section": "",
-    "text": "Let’s wrap up the year 2023"
+    "text": "Let’s wrap up the year 2023\n\nLet’s wrap up the year 2023\nGraduation march (arr. of Let’s wrap up the year 2023)"
   },
   {
     "objectID": "Music.html#miscellaneous-writings",
@@ -277,21 +270,7 @@
     "href": "Physics.html",
     "title": "Physics",
     "section": "",
-    "text": "Here I have posted notes and simulations that I have prepared for seminars and events. Please include a link when citing them."
-  },
-  {
-    "objectID": "Physics.html#notes",
-    "href": "Physics.html#notes",
-    "title": "Physics",
-    "section": "Notes",
-    "text": "Notes\n\n【English】Foundations of Information Geometry\n【English】Derivation of the instanton solution by the path integral formalism\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[2]\n【English】Altland & Simons “Condensed Matter Field Theory” Problem Q3[6]\n【日本語】アシュクロフト・マーミン「固体物理の基礎」2章\n【日本語】Jordan-Wigner変換を用いたマヨラナフェルミオン・SYK模型の実装についてのメモ\n【日本語】Quantum Natural Gradient\n【日本語】変分原理によるハミルトニアンの近似\n【日本語】ラプラス変換表と楽な思い出し方"
-  },
-  {
-    "objectID": "Physics.html#simulations",
-    "href": "Physics.html#simulations",
-    "title": "Physics",
-    "section": "Simulations",
-    "text": "Simulations\nYou can enjoy simulations of famous physics systems on this site."
+    "text": "This page is under construction."
   },
   {
     "objectID": "Phys/notes/Quantum_Natural_Gradient.html",
