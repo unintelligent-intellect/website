@@ -28,6 +28,12 @@ title: "About me"
 
 ---
 
+### Links
+
+- [GitHub](https://github.com/unintelligent-intellect)
+
+---
+
 ### Contact
 
 Please use this email adress (replace $\alpha \tau$ with "＠"): haruyagi.contact $\alpha \tau$ gmail.com
