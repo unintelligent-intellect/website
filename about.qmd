@@ -24,13 +24,8 @@ title: "About me"
 
 ### Now I'm working on/interested in/learning:
 
-- quantum many-body entanglement
-
----
-
-### Links
-
-- [GitHub](https://github.com/unintelligent-intellect)
+I am interested in exotic quantum many-body states realised under the competition between complexity and order.
+I will be submitting my first paper soon. Look forward to it!
 
 ---
 

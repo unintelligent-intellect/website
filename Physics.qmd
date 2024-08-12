@@ -2,4 +2,13 @@
 title: "Physics"
 ---
 
-This page is under construction.
+# Publications
+
+I will soon publish my first paper. Stay tuned!
+
+
+
+# Diary of conference participation
+
+- [Symmetries 2024](https://sites.google.com/view/symmetries2024/home?authuser=0): Open to the public after the meeting.
+- [JPS 79th](https://www.jps.or.jp/activities/meetings/annual/annual-index.php): Open to the public after the meeting.
