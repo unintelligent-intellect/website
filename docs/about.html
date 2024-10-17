@@ -67,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -150,7 +121,6 @@ window.Quarto = {
   <ul>
   <li><a href="#current-affiliation" id="toc-current-affiliation" class="nav-link active" data-scroll-target="#current-affiliation">Current Affiliation</a></li>
   <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#now-im-working-oninterested-inlearning" id="toc-now-im-working-oninterested-inlearning" class="nav-link" data-scroll-target="#now-im-working-oninterested-inlearning">Now I’m working on/interested in/learning:</a></li>
   <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -178,8 +148,9 @@ window.Quarto = {
 
 
 <ul>
-<li>I am a M1 student majoring condensed matter physics and quantum information.</li>
-<li>I <a href="./Music.html">compose music</a> for pleasure.</li>
+<li>I am a first-year master’s student in the <a href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/">Gong group</a>.</li>
+<li>Recently I have been interested in generalized symmetry.</li>
+<li>I <a href="./Music.html">compose music</a> as a hobby.</li>
 </ul>
 <section id="current-affiliation" class="level3">
 <h3 class="anchored" data-anchor-id="current-affiliation">Current Affiliation</h3>
@@ -206,14 +177,9 @@ window.Quarto = {
 </ul>
 <hr>
 </section>
-<section id="now-im-working-oninterested-inlearning" class="level3">
-<h3 class="anchored" data-anchor-id="now-im-working-oninterested-inlearning">Now I’m working on/interested in/learning:</h3>
-<p>I am interested in exotic quantum many-body states realised under the competition between complexity and order. I will be submitting my first paper soon. Look forward to it!</p>
-<hr>
-</section>
 <section id="contact" class="level3">
 <h3 class="anchored" data-anchor-id="contact">Contact</h3>
-<p>Please use this email adress (replace <span class="math inline">\(\alpha \tau\)</span> with “＠”): haruyagi.contact <span class="math inline">\(\alpha \tau\)</span> gmail.com</p>
+<p>Please use this email adress (replace at with “＠”): haruyagi.contact at gmail.com</p>
 
 
 </section>

@@ -2,13 +2,6 @@
 title: "Physics"
 ---
 
-# Publications
-
-I will soon publish my first paper. Stay tuned!
-
-
-
-# Diary of conference participation
-
-- [Symmetries 2024](https://sites.google.com/view/symmetries2024/home?authuser=0): Open to the public after the meeting.
-- [JPS 79th](https://www.jps.or.jp/activities/meetings/annual/annual-index.php): Open to the public after the meeting.
+| Research | arXiv | Related materials |
+|---------|-----|------|
+|Threefold Way for Typical Entanglement| [https://arxiv.org/abs/2410.11309](https://arxiv.org/abs/2410.11309) | [Presentation slides at JPS 79th (in Japanese)](/Phys_resources/slides/jps79th_threefoldway.pdf) |

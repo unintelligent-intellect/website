@@ -2,8 +2,9 @@
 title: "About me"
 ---
 
-- I am a M1 student majoring condensed matter physics and quantum information. 
-- I [compose music](Music.qmd) for pleasure.
+- I am a first-year master's student in the [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
+- Recently I have been interested in generalized symmetry.
+- I [compose music](Music.qmd) as a hobby.
 
 ### Current Affiliation
 
@@ -22,13 +23,6 @@ title: "About me"
 
 ---
 
-### Now I'm working on/interested in/learning:
-
-I am interested in exotic quantum many-body states realised under the competition between complexity and order.
-I will be submitting my first paper soon. Look forward to it!
-
----
-
 ### Contact
 
-Please use this email adress (replace $\alpha \tau$ with "＠"): haruyagi.contact $\alpha \tau$ gmail.com
+Please use this email adress (replace at with "＠"): haruyagi.contact at gmail.com

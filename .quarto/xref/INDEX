@@ -70,5 +70,32 @@
   },
   "!Phys/notes/VariationalApprox.qmd": {
     "VariationalApprox.html": "e9199c3b"
+  },
+  "garbage/notes/Quantum_Natural_Gradient.qmd": {
+    "Quantum_Natural_Gradient.html": "9b8feb49"
+  },
+  "garbage/notes/AltlandSimons_instanton.qmd": {
+    "AltlandSimons_instanton.html": "70eea931"
+  },
+  "garbage/notes/JordanWigner.qmd": {
+    "JordanWigner.html": "8c82692c"
+  },
+  "garbage/notes/LaplaceTransform.qmd": {
+    "LaplaceTransform.html": "c9b722ef"
+  },
+  "garbage/notes/AltlandSimons_Q3-6.qmd": {
+    "AltlandSimons_Q3-6.html": "7ab80892"
+  },
+  "garbage/notes/AshcroftMerminC2.qmd": {
+    "AshcroftMerminC2.html": "9afb2e83"
+  },
+  "garbage/notes/AltlandSimons_Q3-2.qmd": {
+    "AltlandSimons_Q3-2.html": "c6c8bfc3"
+  },
+  "garbage/notes/AppGeom.qmd": {
+    "AppGeom.html": "e27c72c3"
+  },
+  "garbage/notes/VariationalApprox.qmd": {
+    "VariationalApprox.html": "fa324991"
   }
 }
