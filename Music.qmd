@@ -2,7 +2,7 @@
 title: "Music"
 ---
 
-|Compositions|
-|---|
-|[dodecalemma](https://youtu.be/1LN1SFnao1U)|
-|[Let's wrap up the year 2023](https://youtu.be/359SoUZQNDU?si=NCFIg566GP6nKAbn)|
+# Compositions
+
+- [dodecalemma](https://youtu.be/1LN1SFnao1U)
+- [Let's wrap up the year 2023](https://youtu.be/359SoUZQNDU?si=NCFIg566GP6nKAbn)
