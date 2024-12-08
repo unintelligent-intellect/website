@@ -2,6 +2,11 @@
 title: "Physics"
 ---
 
-| Research | arXiv | Related materials |
-|---------|-----|------|
-|Threefold Way for Typical Entanglement| [https://arxiv.org/abs/2410.11309](https://arxiv.org/abs/2410.11309) | [Presentation slides at JPS 79th (in Japanese)](/Phys_resources/slides/jps79th_threefoldway.pdf) |
+# Preprints
+
+- **Haruki Yagi**, Ken Mochizuki, and Zongping Gong, *Threefold Way for Typical Entanglement*, [arXiv:2410.11309](https://arxiv.org/abs/2410.11309).
+    <details><summary>Related materials</summary>
+
+    - [Presentation slides at the joint seminar](/Phys_resources/slides/joint_seminar_threefoldway.pdf)
+    - [Presentation slides at JPS 79th (in Japanese)](/Phys_resources/slides/jps79th_threefoldway.pdf)
+    </details>
