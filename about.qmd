@@ -2,7 +2,7 @@
 title: "About me"
 ---
 
-- I am a first-year master's student in the [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
+- I am a first-year master student in the [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
 - Recently I have been interested in generalized symmetry.
 - I [compose music](Music.qmd) as a hobby.
 
@@ -20,6 +20,11 @@ title: "About me"
     - Dept. of Appl. Phys., School of Engineering, The University of Tokyo
 - 2024.4 - present
     - Dept. of Appl. Phys., Graduate School of Engineering, The University of Tokyo
+
+### Financial Support
+
+I am being financially supported by [FoPM, WINGS Program, the University of Tokyo](https://www.s.u-tokyo.ac.jp/ja/FoPM/).
+I would like to take this opportunity to appreciate the support.
 
 ---
 

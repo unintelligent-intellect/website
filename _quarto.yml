@@ -16,6 +16,6 @@ format:
   html:
     theme: styles.scss
     # css: styles.css
-    toc: true
+    # toc: true
 
 
