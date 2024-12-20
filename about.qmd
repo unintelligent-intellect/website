@@ -3,7 +3,10 @@ title: "About me"
 ---
 
 - I am a first-year master student in the [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
-- Recently I have been interested in generalized symmetry.
+- Recently I have been working on
+    - random matrices
+    - generalized symmetries
+    - and their application to condensed matter physics.
 - I [compose music](Music.qmd) as a hobby.
 
 ### Current Affiliation
