@@ -17,9 +17,9 @@ title: "Home"
 - 2024/08/12-08/16 Participated in [Symmetries 2024](https://sites.google.com/view/symmetries2024/home) held at the university of Oxford.
 - 2024/04/01 Joined [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/), dept. of appl. phys., graduate school of eng., the Univ. of Tokyo.
 
-## Upcoming Events to Participate in
+<!-- ## Upcoming Events to Participate in
 
 - 2024/12/25-12/27 [研究会「複素化による量子系に関する研究の発展」](https://kouji-kashiwa.github.io/workshop_complexification/) held at Saga university
 - 2025/02/17-02/19 [FoPM Symposium](https://indico.ipmu.jp/event/420/overview) held at the university of Tokyo
 - 2025/03/03-03/07 [Enumerative geometry, representation theory, and physics](https://indico.ipmu.jp/event/427/) held at Kavli IPMU, the University of Tokyo
-- 2025/03/10-03/14 [Kyushu IAS-iTHEMS conference: Non-perturbative methods in QFT](https://indico2.riken.jp/event/5013/) held at Kyushu University Institute for Advanced Study
+- 2025/03/10-03/14 [Kyushu IAS-iTHEMS conference: Non-perturbative methods in QFT](https://indico2.riken.jp/event/5013/) held at Kyushu University Institute for Advanced Study -->
