@@ -2,7 +2,8 @@
 title: "About me"
 ---
 
-- I am a first-year master student in the [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
+- I am a first-year master student in [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
+- I have been broadly interested in mathematical physics and its related fields, motivated by condensed matter physics.
 - Recently I have been working on
     - random matrices
     - generalized symmetries

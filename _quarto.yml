@@ -17,5 +17,10 @@ format:
     theme: styles.scss
     # css: styles.css
     # toc: true
+    grid:
+      sidebar-width: 300px
+      body-width: 1200px
+      margin-width: 300px
+      gutter-width: 1.5rem
 
 
