@@ -39,6 +39,6 @@ arXiv: [2410.11309](https://arxiv.org/abs/2410.11309)
 ::: {.callout-tip style=minimum icon=false collapse="true"}
 ## CFT Camp
 
-To study conformal field theory (CFT) with friends, we organized and held a CFT study camp at the University of Tokyo's Yamanaka Dormitory over a three-day period from April 3 to April 6, 2025. For details, please refer to [this PDF (in Japanese)](Phys_resources/others/cft_report_pub.pdf).
+To study conformal field theory (CFT) with friends, I organized and held a CFT camp at the University of Tokyo's Yamanaka Dormitory over a three-day period from April 3 to April 6, 2025. For details, please refer to [this PDF (in Japanese)](Phys_resources/others/cft_report_pub.pdf).
 
 :::
