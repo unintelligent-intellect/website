@@ -5,7 +5,8 @@ title: "Home"
 ## Recent Activities
 
 <div style="max-height: 1000px; overflow-y: auto; border: none; padding: 10px; background-color: transparent;">
-<!-- - 2025/03/10-03/14 [Kyushu IAS-iTHEMS conference: Non-perturbative methods in QFT](https://indico2.riken.jp/event/5013/) held at Kyushu University Institute for Advanced Study-->
+- 2025/03/10-03/14
+    - Participated in [Kyushu IAS-iTHEMS conference: Non-perturbative methods in QFT](https://indico2.riken.jp/event/5013/) held at Kyushu University Institute for Advanced Study and presented in the [poster](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf) session.
 - 2025/02/17-02/19
     - Participated in [FoPM International Symposium](https://indico.ipmu.jp/event/459/) held at the university of Tokyo and presented in the [poster](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf) session.
 - 2024/12/9-12/11

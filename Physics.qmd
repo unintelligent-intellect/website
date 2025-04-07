@@ -11,7 +11,8 @@ Please click the title (the triangle mark) to view the basic information of the 
 ::: {.callout-note style=minimum icon=false collapse="true"}
 ## *Threefold Way for Typical Entanglement*
 **Haruki Yagi**, Ken Mochizuki, and Zongping Gong
-[arXiv:2410.11309](https://arxiv.org/abs/2410.11309)
+
+arXiv: [2410.11309](https://arxiv.org/abs/2410.11309)
 
 <details><summary>Abstract</summary>
 - A typical quantum state with no symmetry can be realized by letting a random unitary act on a fixed state, and the subsystem entanglement spectrum follows the Laguerre unitary ensemble (LUE). For integer-spin time reversal symmetry, we have an analogous scenario where we prepare a time-reversal symmetric state and let random orthogonal matrices act on it, leading to the Laguerre orthogonal ensemble (LOE). However, for half-integer-spin time reversal symmetry, a straightforward analogue leading to the Laguerre symplectic ensemble (LSE) is no longer valid due to that time reversal symmetric state is forbidden by the Kramers' theorem. We devise a system in which the global time reversal operator is fractionalized on the subsystems, and show that LSE arises in the system. Extending this idea, we incorporate general symmetry fractionalization into the system, and show that the statistics of the entanglement spectrum is decomposed into a direct sum of LOE, LUE, and/or LSE. Here, various degeneracies in the entanglement spectrum may appear, depending on the non-Abelian nature of the symmetry group and the cohomology class of the non-trivial projective representation on the subsystem. Our work establishes the entanglement counterpart of the Dyson's threefold way for Hamiltonians with symmetries.
@@ -33,3 +34,11 @@ Please click the title (the triangle mark) to view the basic information of the 
 
 :::
 
+# Others
+
+::: {.callout-tip style=minimum icon=false collapse="true"}
+## CFT Camp
+
+To study conformal field theory (CFT) with friends, we organized and held a CFT study camp at the University of Tokyo's Yamanaka Dormitory over a three-day period from April 3 to April 6, 2025. For details, please refer to [this PDF (in Japanese)](Phys_resources/others/cft_report_pub.pdf).
+
+:::
