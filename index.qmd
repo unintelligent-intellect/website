@@ -1,22 +1,8 @@
 ---
-title: "Home"
+title: ""
 ---
 
-## Recent Activities
+Welcome to Haruki Yagi's homepage.
 
-<div style="max-height: 1000px; overflow-y: auto; border: none; padding: 10px; background-color: transparent;">
-- 2025/03/10-03/14
-    - Participated in [Kyushu IAS-iTHEMS conference: Non-perturbative methods in QFT](https://indico2.riken.jp/event/5013/) held at Kyushu University Institute for Advanced Study and presented in the [poster](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf) session.
-- 2025/02/17-02/19
-    - Participated in [FoPM International Symposium](https://indico.ipmu.jp/event/459/) held at the university of Tokyo and presented in the [poster](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf) session.
-- 2024/12/9-12/11
-    - Participated in [New Trends in Condensed Matter Theory 2024 at ISSP UTokyo](https://oka.issp.u-tokyo.ac.jp/ntcmt2024/ntcmt2024.html) and presented in the [poster](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf) session.
-- 2024/10/16
-    - The research with [Ken Mochizuki](https://damp-saiki-9142.fakefur.jp/english.html) and [Zongping Gong](https://sites.google.com/site/zongpinggong/) has been uploaded to arXiv: *[Threefold Way for Typical Entanglement](https://arxiv.org/abs/2410.11309v1)*
-- 2024/09/16-09/19
-    - Participated in [The Physical Society of Japan 2024 Annual Meating](https://www.jps.or.jp/activities/meetings/annual/annual-index.php) held at Hokkaido university and gave an [oral presentation](Phys_resources/slides/threefold_way_for_typical_entanglement_slides_jp.pdf).
-- 2024/08/12-08/16 
-    - Participated in [Symmetries 2024](https://sites.google.com/view/symmetries2024/home) held at the university of Oxford.
-- 2024/04/01
-    - Joined [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/), dept. of appl. phys., graduate school of eng., the Univ. of Tokyo.
-</div>
+- For information about physics, please see [this page](Physics.qmd).
+- If you would like to know about me, please see [this page](about.qmd).

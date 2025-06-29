@@ -3,17 +3,13 @@ title: "About me"
 ---
 
 - I am a second-year master student in [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
-- I have been broadly interested in mathematical physics and its related fields, motivated by condensed matter physics.
-- Recently I have been working on
-    - random matrices
-    - generalized symmetries
-    - and their application to condensed matter physics.
+- I am currently broadly interested in approaches to condensed matter theory and quantum information using quantum field theory.
+- Specific topics include random matrices, topology, and generalized symmetries.
 - I [compose music](Music.qmd) as a hobby.
 
 ### Current Affiliation
 
 - [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/)
-
 - [Dept. of Appl. Phys.](https://www.ap.t.u-tokyo.ac.jp), Faculty of Engineering, The University of Tokyo
 
 ### Education
@@ -35,3 +31,12 @@ I would like to take this opportunity to appreciate the support.
 ### Contact
 
 Please use this email adress (replace at with "＠"): yagi-haruki819 at g.ecc.u-tokyo.ac.jp
+
+---
+
+### About my name
+
+- My name, "Haruki Yagi," is written in kanji as Yagi (family name) = 八木 and Haruki (given name) = 春樹.
+- The family name means "eight trees," and the given name means "spring tree." Here, "spring tree" probably refers to a cherry tree.
+    - While the given name has a poetic nuance, the person himself does not particularly reflect that.
+- In Japanese, "Yagi" usually means "goat," but the kanji are different in my case, so there is no connection.

@@ -12,23 +12,17 @@ Please click the title (the triangle mark) to view the basic information of the 
 ## *Threefold Way for Typical Entanglement*
 **Haruki Yagi**, Ken Mochizuki, and Zongping Gong
 
-arXiv: [2410.11309](https://arxiv.org/abs/2410.11309)
+- [arXiv:2410.11309](https://arxiv.org/abs/2410.11309)
+- [PhysRevLett.134.150401](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.150401)
 
 <details><summary>Abstract</summary>
 - A typical quantum state with no symmetry can be realized by letting a random unitary act on a fixed state, and the subsystem entanglement spectrum follows the Laguerre unitary ensemble (LUE). For integer-spin time reversal symmetry, we have an analogous scenario where we prepare a time-reversal symmetric state and let random orthogonal matrices act on it, leading to the Laguerre orthogonal ensemble (LOE). However, for half-integer-spin time reversal symmetry, a straightforward analogue leading to the Laguerre symplectic ensemble (LSE) is no longer valid due to that time reversal symmetric state is forbidden by the Kramers' theorem. We devise a system in which the global time reversal operator is fractionalized on the subsystems, and show that LSE arises in the system. Extending this idea, we incorporate general symmetry fractionalization into the system, and show that the statistics of the entanglement spectrum is decomposed into a direct sum of LOE, LUE, and/or LSE. Here, various degeneracies in the entanglement spectrum may appear, depending on the non-Abelian nature of the symmetry group and the cohomology class of the non-trivial projective representation on the subsystem. Our work establishes the entanglement counterpart of the Dyson's threefold way for Hamiltonians with symmetries.
 </details>
 
-<details><summary>List of conferences for oral and poster presentations</summary>
-
-- Poster Presentation: [FoPM International Symposium](https://indico.ipmu.jp/event/459/) 
-- Poster Presentation: [New Trends in Condensed Matter Theory 2024](https://oka.issp.u-tokyo.ac.jp/ntcmt2024/ntcmt2024.html) 
-- Oral Presentation: [79th Annual Meeting (2024), The Physical Society of Japan](https://onsite.gakkai-web.net/jps/jps_search/2024au/index.html)
-</details>
-
 <details><summary>Supporting materials</summary>
 
 - [Slides (English)](Phys_resources/slides/threefold_way_for_typical_entanglement_slides_en.pdf)
-- [Slides (Japanese)](Phys_resources/slides/threefold_way_for_typical_entanglement_slides_jp.pdf)
+- [スライド (日本語)](Phys_resources/slides/threefold_way_for_typical_entanglement_slides_jp.pdf)
 - [Poster (English)](Phys_resources/slides/threefold_way_for_typical_entanglement_poster_en.pdf)
 </details>
 
