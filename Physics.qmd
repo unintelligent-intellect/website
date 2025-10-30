@@ -20,7 +20,7 @@ Please click the title (the triangle mark) to view the basic information of the 
 </details>
 
 <details><summary>Supporting materials</summary>
-- Coming soon!
+- [Slides (English)](Phys_resources/slides/entanglement_spectrum_resolved_by_loop_symmetries_slides_en.pdf)
 </details>
 
 :::
