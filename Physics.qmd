@@ -6,7 +6,7 @@ This page summarizes my research activities in physics.
 
 # Research Works
 
-Please click the title to view the basic information of the paper.
+Click a title to view details about the paper.
 
 
 ::: {.callout-note style=minimum icon=false collapse="true"}
@@ -21,6 +21,7 @@ Please click the title to view the basic information of the paper.
 
 <details><summary>Related materials</summary>
 - [Slides (English)](Phys_resources/slides/entanglement_spectrum_resolved_by_loop_symmetries_slides_en.pdf)
+- [Poster (English)](Phys_resources/slides/entanglement_spectrum_resolved_by_loop_symmetries_poster_en.pdf)
 </details>
 
 :::
@@ -53,7 +54,7 @@ I am an alphaXiv user. If you have comments on a paper, you may contact me via e
 ::: {.callout-tip style=minimum icon=false collapse="true"}
 ## CFT Camp 2026
 
-Following last year, I will hold the CFT Camp 2026. 
+Following last year's event, I will be holding CFT Camp 2026. 
 ~~Those wishing to participate should read [this PDF (in Japanese)](Phys_resources/others/cft_camp_about_2026.pdf).~~ **Registration is now closed.**
 
 :::
