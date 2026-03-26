@@ -4,7 +4,8 @@ title: ""
 
 Welcome to Haruki Yagi's homepage.
 
-- I am a second-year master student in [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/).
+- I am a first-year Ph.D. student in [Gong group](https://sites.google.com/g.ecc.u-tokyo.ac.jp/gonggroup/)
+    - I have already earned a master’s degree. I plan to spend three years in the doctoral program.
 - My current research interests lie broadly in condensed matter theory and quantum information, approached from a quantum field theory perspective.
 - For information about physics, please see [this page](Physics.qmd).
 - If you would like to know about me, please see [this page](about.qmd).
