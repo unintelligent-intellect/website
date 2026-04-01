@@ -52,16 +52,8 @@ I am an alphaXiv user. If you have comments on a paper, you may contact me via e
 # Others
 
 ::: {.callout-tip style=minimum icon=false collapse="true"}
-## CFT Camp 2026
+## CFT Camp
 
-Following last year's event, I will be holding CFT Camp 2026. 
-~~Those wishing to participate should read [this PDF (in Japanese)](Phys_resources/others/cft_camp_about_2026.pdf).~~ **Registration is now closed.**
-
-:::
-
-::: {.callout-tip style=minimum icon=false collapse="true"}
-## CFT Camp 2025
-
-To study conformal field theory (CFT) with friends, I organized and held CFT Camp at the University of Tokyo's Yamanaka Dormitory over a three-day period from April 3 to April 6, 2025. For details, please refer to [this PDF (in Japanese)](Phys_resources/others/cft_report_pub.pdf).
+To study conformal field theory (CFT) with friends, I organized and held CFT Camp. For details, please refer to [the homepage (in Japanese)](https://sites.google.com/g.ecc.u-tokyo.ac.jp/cft-camp/home).
 
 :::

@@ -14,7 +14,7 @@ title: "About me"
 
 ### Financial Support
 
-I am financially supported by [FoPM, WINGS Program, the University of Tokyo](https://www.s.u-tokyo.ac.jp/ja/FoPM/).
+I am financially supported by [Japan Society for the Promotion of Science (JSPS)](https://www.jsps.go.jp/).
 I would like to take this opportunity to appreciate the support.
 
 ---
